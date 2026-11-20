@@ -1,0 +1,1193 @@
+
+
+===== PAGE 1 =====
+HIRING ASSIGNMENT  |  All roles and seniority levels
+1
+Build an AI squat analysis application
+Open ended assignment for all roles and seniority levels
+Why this assignment exists
+We hire technical generalists who take an ambiguous customer objective and turn it into a working product.
+AI agents enable one person to work across product, design, engineering, testing, sales and support. We
+expect broad ownership backed by enough technical depth to verify the result and recognize when specialist
+input is needed.
+This is an open ended assignment for candidates across all roles and seniority levels. Your position within
+the company, including your role and seniority, will be determined by the quality of your submission.
+Demonstrate what you can build, how well you understand it and the judgment behind your decisions.
+This exercise tests how effectively you use AI to tackle an unfamiliar, non-trivial problem. We value initiative,
+resourcefulness and a shipped result, together with the judgment to distinguish a convincing demonstration
+from a trustworthy assessment.
+Your objective
+Build a consumer-facing application that accepts a side-view video of a person performing barbell squats,
+annotates the movement, and provides structured feedback against the attached reference document. You
+may use any side-view squat video available online; you do not need to record your own. Include a run on
+the common sample below so submissions can be compared on the same input.
+Common sample: View squat video on YouTube
+The reference PDF follows the assignment in this file. Parse it into a reusable skill for an AI agent embedded
+in your application. The document must drive the assessment; generic squat advice from a model is not
+enough. All candidates receive the same reference and common sample.
+Time box and freedom
+Time box the build to approximately 4-6 hours and report your actual time. Aim for an end-to-end working
+prototype. This is a time box for exploring and demonstrating the solution, not an expectation of
+production-grade accuracy across every video. Submit what works, what you verified and what remains
+unresolved. We assess scope and judgment alongside delivery.
+Choose web, Android or iOS, and any stack, models, agents, libraries or managed services. Use AI
+extensively. You own the resulting behavior and should understand the important code and decisions,
+regardless of who or what generated them.
+Make reasonable assumptions and document them. Choose the smallest implementation that proves the
+complete experience. We are assessing your ability to work through an unfamiliar, non-trivial problem, not
+your prior knowledge of exercise science.
+
+
+
+===== PAGE 2 =====
+HIRING ASSIGNMENT  |  All roles and seniority levels
+2
+What the application must do
+Turn the document into an agent skill
+Extract the supplied standards into a reusable, inspectable set of instructions or rules that the embedded
+agent actually uses. The format is your choice. Cite source pages or sections for each criterion and keep the
+skill separate enough to update without rewriting the application. Identify which criteria can be assessed from
+a side-view video and which cannot.
+Accept and process a squat video
+Let a user upload a side-view video and understand upload progress, processing status and any failure.
+Support multiple repetitions. State supported formats, duration limits and recording requirements in the
+interface.
+Identify and annotate the movement
+Identify and track the relevant visible landmarks, including hips, knees, ankles and the points needed to
+estimate torso or back angle. Track the barbell and show its path. Identify repetitions and their bottom
+positions. Return playable annotated video or synchronized video overlays, with markings that follow the
+actual movement.
+Make measurements and evidence understandable. Distinguish observed points from estimates. Handle
+occlusion, poor framing and uncertain tracking explicitly; an unassessable result is preferable to invented
+precision.
+Assess against the supplied standards
+Use the movement evidence and document-derived skill to assess each repetition. Present a clear overall
+summary and structured findings. Each finding should include:
+• The repetition and criterion being assessed, with its source section in the document.
+ • A result of meets standard, does not meet standard, or cannot assess.
+ • The supporting timestamp or frame, observed measurement where relevant, and a short explanation.
+ • Actionable feedback grounded in the supplied standard, plus any uncertainty that affects the conclusion.
+ Do not add unsupported thresholds or rules and present them as document requirements. Explain how the
+system behaves when the document or video does not provide enough information.
+Deliver a consumer experience
+Make the path from upload to useful feedback feel coherent and polished. A non-technical user should
+understand what happened, where the evidence is and what to do next. Use your judgment on visual design,
+navigation and presentation.
+The required upload > analysis > annotation > feedback flow must run on a newly uploaded video. Disclose
+mocked components and manual steps. A prepared result or a video of an interface alone does not
+demonstrate the working flow.
+
+
+
+===== PAGE 3 =====
+HIRING ASSIGNMENT  |  All roles and seniority levels
+3
+What to submit
+ • A working application link or installable build, with any access instructions. A reproducible local launch is
+ acceptable if hosting is impractical; explain the constraint.
+• The source repository, document-derived skill and concise setup instructions, including required services
+ and environment variable names. Do not include secret values.
+• A short build note covering architecture, model and tool choices, actual time spent, approximate build and
+ per-video costs, key trade-offs and known limitations.
+• A brief account of how you used AI: what you delegated, what you inspected, and one meaningful mistake
+ or failure you caught and corrected. Selected prompts or agent traces are welcome; an exhaustive
+transcript is unnecessary.
+• Evidence from the common sample video and at least one additional difficult or unsuitable recording. Show
+ what you verified about landmark placement, bar path, source grounding and final feedback. If the
+common sample is inaccessible, report that and identify your substitute.
+Demonstration and discussion
+Prepare a 15-minute walkthrough: about 5 minutes presenting the product and its value to a prospective
+customer, then 10 minutes demonstrating the application and explaining how it works. We may supply a new
+video or change a rule in the source document during the review.
+Be ready to explain the critical path through the system, investigate an incorrect result, and show how a
+change to the skill affects the assessment. We want to see your understanding of what the AI produced.
+How we evaluate
+Accuracy and defensible evidence carry more weight than visual polish. A simpler application with verified
+results will score above a polished one with incorrect annotations or unsupported conclusions.
+• Ownership and delivery - Did you make progress through ambiguity, resolve obstacles and ship a useful
+ core experience with a clear account of unfinished work?
+• AI fluency and understanding - Did you use agents effectively, verify their output and demonstrate
+ command of the resulting system?
+• Architecture and efficiency - Are the choices appropriate to the time box, with sensible trade-offs in
+ accuracy, complexity, latency and cost?
+• Evidence and reliability - Do annotations match the video, do conclusions follow the supplied standards,
+ and are limitations represented honestly?
+• Product and commercial judgment - Is the experience usable, and can you discover a customer need,
+ communicate value and respond thoughtfully to objections and changed constraints?
+The decisive question is what you shipped, what you verified, what you understood and how you responded
+when it failed. Sound technical judgment and honest limitations matter more than confident claims.
+Reference PDF follows
+Document_for_skill.pdf is appended in full on the following pages. Use this reference to build the agent skill.
+Cite its page numbers as reference pages 1-35 (combined PDF pages 4-38).
+
+
+
+===== PAGE 4 =====
+	
+The	 squat	 has	 been	 the	 most	 important,	 yet	 most	 poorly	 understood,
+exercise	 in	 the	 training	 arsenal	 for	 a	 very	 long	 time.	 The	 full-range-of-motion
+exercise	 known	 as	 the	 squat	 is	 the	 single	 most	 useful	 exercise	 in	 the	 weight
+room,	and	our	most	valuable	tool	for	building	strength,	power,	and	size.
+The	squat	is	literally	the	only	exercise	in	the	entire	repertoire	of	weighted
+human	 movement	 that	 allows	 the	 direct	 training	 of	 the	 complex	 movement
+pattern	 known	 as	hip	drive	 –	 the	 active	 recruitment	 of	 the	 muscles	 of	 the
+posterior	chain.	The	term	posterior	chain	refers	to	the	muscles	that	produce	hip
+extension	 –	 the	 straightening	 out	 of	 the	 hip	 joint	 from	 its	 flexed	 (or	 bent)
+position	in	the	bottom	of	the	squat.	These	muscle	groups	–	also	referred	to	as	the
+hip	extensors	–	are	the	hamstrings,	the	glutes,	and	the	adductors	(groin	muscles).
+Because	 these	 important	 muscles	 contribute	 to	 jumping,	 pulling,	 pushing,	 and
+anything	else	involving	the	lower	body,	we	want	them	strong.	The	best	way	to
+get	them	strong	is	to	squat,	and	if	you	are	to	squat	correctly,	you	must	use	hip
+drive,	 which	 is	 best	 thought	 of	 as	 a	 shoving-up	 of	 the	 sacral	 area	 of	 the	 lower
+back,	 the	 area	 right	 above	 your	 butt.	 Every	 time	 you	 use	 this	 motion	 to	 propel
+yourself	 out	 of	 the	 bottom	 of	 the	 squat,	 you	 train	 the	 muscles	 in	 the	 posterior
+chain.
+	
+The Squat
+
+
+===== PAGE 5 =====
+	
+	
+Figure	2-1.	
+Three	views	of	the	squat.	
+Profile	view
+,
+	Depth	landmarks	for	the	full	squat.	The	top	of	the
+patella	(A)	and	the	hip	joint,	as	identified	by	the	apex	in	the	crease	of	the	shorts	(B).	The	B	side	of	the	plane
+formed	by	these	two	points	must	drop	below	parallel	with	the	ground.
+All	styles	of	squatting	tend	to	make	the	quads	sore,	more	so	than	any	of
+the	other	muscles	in	the	movement.	This	soreness	occurs	because	the	quads	are
+the	 only	 knee	 extensor	 group,	 while	 the	 hip	 extensors	 consist	 of	 three	 muscle
+groups	 (hamstrings,	 glutes,	 adductors).	 They	 comprise	 more	 potential	 muscle
+mass	 to	 spread	 the	 work	 across	 –	 if	 they	 are	 trained	 correctly.	 Given	 this
+anatomical	situation,	we	want	to	squat	in	a	way	that	maximizes	the	use	of	all	the
+muscle	that	can	potentially	be	brought	into	the	exercise	and	thus	be	strengthened
+by	it.	So	we	need	a	way	to	squat	that	involves	the	posterior	muscle	mass,	making
+it	operate	up	to	its	potential	for	contributing	to	strength	and	power.	The	low-bar
+back	squat	is	that	way.
+Done	 correctly,	 the	 squat	 is	 the	 only	 exercise	 in	 the	 weight	 room	 that
+trains	the	recruitment	of	the	entire	posterior	chain	in	a	way	that	is	progressively
+improvable.	These	are	the	things	that	make	the	squat	the	best	exercise	you	can
+do	with	barbells	and,	by	extension,	the	best	strength	exercise	there	is.	The	squat
+trains	the	posterior	chain	muscles	more	effectively	than	any	other	movement	that
+uses	them	because	none	of	the	other	movements	involve	enough	range	of	motion
+to	use	them	all	at	the	same	time,	and	none	of	the	other	movements	train	this	long
+range	of	motion	by	preceding	their	
+concentric
+,	or	shortening,	contraction	with	an
+eccentric
+,	 or	 lengthening,	 contraction,	 which	 produces	 a	 stretch-shortening
+cycle,	or	
+stretch	reflex
+.
+
+
+===== PAGE 6 =====
+The	squat’s	stretch-shortening	cycle	is	important	for	three	reasons:
+	
+1.	
+The	 stretch	 reflex	 stores	 energy	 in	 the	 viscoelastic	 components	 of	 the
+muscles	and	fascia,	 and	this	energy	gets	used	at	the	turnaround	out	of	the
+bottom.
+2.	
+The	 stretch	 tells	 the	 neuromuscular	 system	 that	 a	 contraction	 is	 about	 to
+follow.	This	signal	results	in	more	contractile	units	firing	more	efficiently,
+enabling	 you	 to	 generate	 more	 force	 than	 would	 be	 possible	 without	 the
+stretch	reflex.
+3.	
+Because	this	particular	loaded	stretch	is	provided	by	the	lowering	phase	of
+the	squat	(which	uses	all	of	the	muscles	of	the	posterior	chain	over	their	full
+range	 of	 motion),	 the	 subsequent	 contraction	 recruits	 many	 more	 motor
+units	than	would	be	recruited	in	a	different	exercise.
+The	 conventional	 deadlift,	 for	 example,	 uses	 the	 hamstrings	 and	 glutes,
+but	 it	 leaves	 out	 much	 of	 the	 adductors’	 function,	 and	 starts	 with	 a	 concentric
+contraction	in	which	the	hips	start	out	well	above	the	level	of	a	deep	squat.	No
+bounce,	 shorter	 range	 of	 motion,	 but	 very	 hard	 anyway	 –	 harder,	 in	 fact,	 than
+squatting,	due	to	the	comparatively	inefficient	nature	of	the	dead-stop	start	–	yet
+not	 as	 useful	 to	 overall	 strength	 development.	 Plyometric	 jumps	 can	 be	 deep
+enough	and	might	employ	the	requisite	stretch	reflex	provided	by	the	drop,	but
+they	are	not	incrementally	increasable	the	way	a	loaded	barbell	exercise	is,	they
+can	be	damned	tough	on	the	feet	and	knees	for	novices,	and	they	are	not	weight-
+bearing	 in	 the	 sense	 that	 the	 whole	 skeleton	 is	 loaded	 with	 a	 bar	 on	 the
+shoulders.	In	contrast,	the	squat	uses	all	the	posterior	chain	muscles,	uses	the	full
+range	of	motion	of	the	hips	and	knees,	has	the	stretch-shortening	cycle	inherent
+in	the	movement,	and	can	be	performed	by	anybody	who	can	sit	down	in	a	chair,
+because	 we	 have	 very	 light	 bars	 that	 can	 be	 increased	 in	 weight	 by	 very	 small
+increments.
+The	term	“posterior	chain”	obviously	refers	to	the	anatomical	position	of
+these	 muscular	 components.	 It	 also	 indicates	 the	 nature	 of	 the	 problems	 most
+people	 experience	 under	 the	 bar,	 trying	 to	 improve	 their	 efficiency	 while
+squatting.	 Humans	 are	 bipedal	 creatures	 with	 prehensile	 hands	 and	 opposable
+thumbs,	 a	 configuration	 that	 has	 profoundly	 affected	 our	 perception	 as	 well	 as
+our	posture.	We	are	used	to	doing	things	with	our	hands	in	a	position	where	our
+eyes	can	see	them,	and	we	are	therefore	set	up	to	think	about	things	done	with
+our	hands.	We	are	not	used	to	thinking	about	our	nether	regions,	at	least	those
+unrelated	 to	 toilet	 functions.	 The	 backside	 of	 your	 head,	 torso,	 and	 legs	 are
+
+
+===== PAGE 7 =====
+seldom	 the	 focus	 of	 your	 attention	 unless	 they	 hurt,	 and	 they	 remain	 visually
+unobservable	even	with	a	mirror.	The	parts	you	can	see	in	the	mirror	–	the	arms,
+chest,	and	abs,	and	the	quads	and	calves	if	you’re	wearing	shorts	–	always	end
+up	 being	 the	 favorite	 things	 for	 most	 people	 to	 train.	 They	 are	 also	 the	 easiest
+parts	to	learn	how	to	train	because	they	involve	or	are	facilitated	by	the	use	of
+our	hands,	and	we	are	very	“handsy”	creatures.
+The	hard	parts	to	train	correctly	are	the	ones	you	can’t	see.	The	posterior
+chain	 is	 the	 most	 important	 component	 of	 the	 musculature	 that	 directly
+contributes	to	gross	movement	of	the	body,	as	well	as	being	the	source	of	whole-
+body	 power.	 The	 posterior	 chain	 is	 also	 the	 hardest	 part	 to	 learn	 how	 to	 use
+correctly.	 This	 would	 be	 easier	 if	 you	 didn’t	 have	 any	 hands:	 how	 would	 you
+pick	up	a	table	without	the	ability	to	grab	the	edge	of	the	thing	and	lift	it?	You’d
+get	under	it	and	raise	it	with	your	upper	back,	or	squat	down	and	drive	up	with
+your	hips	against	the	undersurface	of	it,	or	lie	down	on	your	back	and	drive	it	up
+with	your	feet,	because	those	would	be	the	only	options	open	to	you.	But	your
+hands	shift	your	focus	away	from	these	options	and	enable	you	to	avoid	thinking
+about	them	at	all.	So	posterior	chain	matters	remain	largely	unexplored	by	most
+people,	and	this	makes	their	correct	use	a	rather	groundbreaking	experience.
+You	will	find	that	the	posterior	aspects	of	squatting	and	pulling	present
+the	most	persistent	problems,	require	the	greatest	amount	of	outside	input	from
+coaches	and	training	partners,	and	will	be	the	first	aspects	of	form	to	deteriorate
+in	the	absence	of	outside	reinforcement.	For	coaches,	the	posterior	chain	is	the
+hardest	part	of	the	musculature	to	understand,	to	explain,	and	to	influence.	But	it
+is	 also	 the	 most	 critical	 aspect	 of	 human	 movement	 from	 the	 perspective	 of
+athletic	 performance,	 and	 the	 mastery	 of	 its	 lore	 can	 determine	 the	 difference
+between	an	effective	coach	and	a	slightly-more-than-passive	observer,	between
+an	effective	athlete	and	one	who	merely	moves.
+	
+Much	 is	 made	 of	 “core”	 strength,	 and	 fortunes	 have	 been	 made	 selling
+new	 ways	 to	 train	 the	 core	 muscles.	 A	 correct	 squat	 perfectly	 balances	 all	 the
+forces	around	the	knees	and	the	hips,	using	these	muscles	in	exactly	the	way	the
+skeletal	biomechanics	are	designed	for	them	to	be	used,	over	their	full	range	of
+motion.	The	postural	muscles	of	the	lower	back,	the	upper	back,	the	abdominals
+and	lateral	trunk	muscles,	the	costal	(rib	cage)	muscles,	and	even	the	shoulders
+and	arms	are	used	isometrically.	Their	static	contraction	supports	the	trunk	and
+transfers	kinetic	power	from	the	primary	force-generating	muscle	groups	to	the
+bar.	The	trunk	muscles	function	as	the	transmission,	while	the	hips	and	legs	are
+
+
+===== PAGE 8 =====
+the	engine.
+Notice	 that	 the	 “core”	 of	 the	 body	 is	 at	 the	 center	 of	 the	 squat,	 that	 the
+muscles	get	smaller	the	farther	away	from	the	“core”	they	are,	and	that	the	squat
+trains	 them	 in	 exactly	 this	 priority	 (
+Figure	 2-2
+).	 Balance	 is	 provided	 by	 the
+interaction	of	the	postural	muscles	with	the	hips	and	legs,	starting	on	the	ground
+at	 the	 feet	 and	 proceeding	 up	 to	 the	 bar.	 Balance	 is	 controlled	 by	 a	 massive
+amount	 of	 central	 nervous	 system	 activity	 under	 the	 conscious	 direction	 of	 the
+athlete’s	 mind.	 In	 addition,	 the	 systemic	 nature	 of	 the	 movement,	 when	 done
+with	heavy	weights,	produces	hormonal	responses	that	affect	the	entire	body.	So
+not	only	is	“the	core”	strengthened,	but	it	is	strengthened	in	the	context	of	a	total
+physical	and	mental	experience.
+Figure	2-2.
+	Total-body	power	development	originates	in	the	hips,	and	the	ability	to	generate	power
+diminishes	with	distance	from	the	hips.	Note	also	that	the	farther	from	the	center	of	the	body	a	body	part	is,
+the	greater	the	angular	velocity	with	which	the	body	part	can	move,	enabling	the	application	of	power
+through	acceleration.	From	a	concept	by	David	Webster,	versions	of	which	have	been	used	by	Tommy
+Kono	and	Bill	Starr.	This	concept	has	recently	gained	new	traction	under	the	names	“core	strength,”	“core
+stability,”	and	“functional	training.”	It	seems	rather	obvious	to	the	author	that	an	athlete	with	a	500-pound
+squat	has	a	more	stable	“core”	than	that	same	athlete	would	with	a	200-pound	squat.
+The	 squat	 is	 poorly	 understood	 because	 it	 involves	 the	 use	 of	 many
+muscles	 –	 more	 than	 most	 people	 realize	 –	 and	 most	 of	 the	 people	 who	 don’t
+understand	it	have	never	done	it	correctly	themselves.	This	means	that	they	can’t
+appreciate	 the	 true	 nature	 of	 the	 movement	 and	 the	 interactions	 of	 all	 the
+muscles	functioning	in	a	coordinated	manner,	since	to	truly	understand	a	thing,
+
+
+===== PAGE 9 =====
+you	must	experience	it	personally.	The	more	people	who	learn	to	squat	correctly,
+the	more	people	there	will	be	who	understand	the	squat,	and	then,	like	ripples	in
+a	pond,	knowledge	and	strength	will	spread.	This	process	starts	here,	with	you.
+Loaded	Human	Movement
+	
+A	 basic	 understanding	 of	 the	 nature	 of	 loaded	 human	 movement	 –	 the
+ways	 that	 the	 skeletal	 system	 translates	 the	 force	 of	 muscle	 contraction	 into
+movement	 as	 the	 body	 interacts	 with	 its	 environment	 –	 is	 essential	 to
+understanding	 barbell	 training.	 A	 few	 simpl	 e	 lessons,	 which	 can	 be	 learned
+through	observing	the	squat,	are	equally	applicable	to	all	other	barbell	exercises.
+The	 most	 basic	 of	 observations	 is	 that	 when	 a	 barbell	 is	 loaded,	 the	 force	 that
+provides	the	weight	of	the	barbell	is	gravity.	And	gravity	–	always,	everywhere,
+every	time	–	operates	in	a	straight	line	perpendicular	to	the	surface	of	the	earth.
+Gravity	is	generated	by	mass.	In	this	particular	case,	we	are	concerned	with	the
+mass	 of	 the	 planet,	 which	 has	 conveniently	 organized	 itself	 into	 the	 general
+shape	of	a	sphere	–	ignoring	minor	surface	features	like	mountains	and	valleys	–
+under	the	influence	of	this	gravity.	So	the	surface	of	the	earth	is	assumed	to	be
+horizontal	for	this	definition;	after	all,	a	rock	dropped	on	the	side	of	a	hill	still
+falls	in	the	direction	we	define	as	
+down
+.	This	fact	has	yet	to	be	disputed,	and	the
+principle	has	risen	to	the	status	of	Physical	Law:	there	are	no	known	examples	of
+unimpeded	 objects	 falling	 in	 a	 path	 described	 as	 “non-vertical.”	 The	 force	 of
+gravity	 acting	 on	 the	 bar	 is	 always	 acting	 straight	 down	 in	 a	 vertical	 line.
+Therefore,	the	most	efficient	way	to	oppose	this	force	is	by	acting	on	it	vertically
+as	well.	So	not	only	is	a	straight	line	the	shortest	distance	between	two	points,
+but	a	straight	
+vertical
+	line	is	also	the	most	efficient	bar	path	for	a	barbell	moving
+through	space	in	a	gravitational	framework.
+In	fact,	the	work	done	on	a	loaded	barbell	must	be	analyzed	on	the	basis
+of	this	framework.	
+Work
+	is	defined	as	the	amount	of	
+force
+	(the	influence	which
+causes	 a	 change	 in	 motion	 or	 shape)	 multiplied	 by	 the	
+distance
+	 the	 barbell
+moves.	Pounds	on	the	bar	being	a	unit	of	force,	work	can	be	expressed	in	foot-
+pounds.	But	since	gravity	operates	in	only	one	direction,	straight	down,	the	work
+done	 against	 gravity	 consists	 only	 of	 the	 distance	 the	 barbell	 moves	 vertically.
+Any	 other	 motion	 imparted	 to	 the	 bar	 –	 i.e.,	 horizontal	 motion,	 in	 a	 direction
+either	forward	or	back	relative	to	the	lifter	–	cannot	be	considered	work	against
+gravity,	although	force	will	be	utilized	when	the	motion	is	produced.	Rolling	the
+barbell	around	the	room	constitutes	work	against	gravity	
+only	if	the	elevation	of
+the	barbell	changes,
+	because	gravity	influences	the	mass	of	the	barbell	in	only
+
+
+===== PAGE 10 =====
+one	direction	–	down.
+Figure	2-3.	
+Gravity	acts	vertically,	and	only	vertically.	Any	work	done	against	gravity	will	be	done	in	a
+direction	opposite	to	its	force,	
+i.e.
+	straight	up.	Any	horizontal	component	to	a	barbell	movement	is	not	work
+done	against	gravity.
+Next,	 when	 a	 barbell	 is	 supported	 by	 a	 human	 body,	 the	 lifter	 and	 the
+barbell	 must	 be	 considered	 as	 a	 system	 for	 any	 analysis	 that	 applies	 to	 their
+combined	mass.	The	center	of	mass	(COM)	of	the	human	body	in	the	standing
+“normal	anatomical	position”	is	a	point	in	the	middle	of	the	hips,	approximately
+level	with	the	sacrum.	When	you	squat	down	below	parallel,	the	geometry	of	the
+system	changes	to	place	the	COM	in	the	air	somewhere	between	your	thighs	and
+your	torso.	The	COM	of	the	loaded	bar	is	in	the	middle	of	the	bar	on	your	back.
+The	
+lifter/barbell	system
+	has	a	COM	somewhere	between	the	two.	As	the	weight
+of	 the	 bar	 increases,	 the	 system’s	 COM	 moves	 closer	 to	 the	 bar	 until,	 at	 very
+heavy	weights,	the	barbell	itself	approximates	the	system’s	COM.	For	practical
+purposes,	we	will	assume	that	the	barbell	will	be	loaded	with	heavy	weights	and
+that	the	barbell	is	usually	the	object	that	we	must	be	concerned	with	balancing	as
+we	move	it	through	the	range	of	motion	of	the	exercise.
+
+
+===== PAGE 11 =====
+Figure	2-4.
+	The	COM	shifts	up	toward	the	bar	as	the	mass	of	the	barbell	increases.
+Notice	that	in	
+Figure	2-5
+,	a	dashed	line	illustrates	a	vertical	relationship
+between	the	barbell	on	the	back	and	the	middle	of	the	foot	against	the	floor.	It
+should	 be	 intuitively	 obvious	 that	 the	 lifter/barbell	 system	 will	 be	 in	 balance
+when	it	is	directly	over	the	middle	of	the	foot,	with	the	
+midfoot
+	position	–	right
+under	the	arch	of	the	foot	–	being	the	point	of	interaction	with	the	ground	that	is
+the	 farthest	 away	 from	 both	 the	 forward	 and	 rearward	 edges	 of	 contact.	 Very
+simply,	the	midfoot	is	exactly	halfway	between	either	end	of	the	sole	of	the	shoe.
+It	 is	 therefore	 the	 most	 stable	 position,	 the	 one	 which	 would	 take	 the	 most
+movement	to	disrupt,	and	therefore	the	one	naturally	favored	by	the	body,	loaded
+or	 not.	 The	 heavier	 the	 weight	 on	 the	 bar,	 the	 more	 precisely	 the	 bar	 position
+calibrates	 to	 the	 midfoot.	 In	 other	 words,	 at	 light	 weights,	 where	 the	 mass	 is
+primarily	 that	 of	 the	 body	 itself,	 the	 bar	 may	 be	 forward	 of	 the	 midfoot	 in	 a
+position	 of	 stability,	 and	 as	 the	 weight	 increases,	 the	 bar	 comes	 into	 balance
+more	directly	over	the	midfoot.
+
+
+===== PAGE 12 =====
+Figure	2-5.	
+The	diagnostic	angles	for	the	squat.	The	hip	angle	is	formed	by	the	plane	of	the	torso	and	the
+femur.	The	knee	angle	is	formed	by	the	femur	and	the	tibia.	The	back	angle	is	formed	by	the	plane	of	the
+torso	and	the	floor.	Note	that	the	barbell	is	directly	over	the	midfoot	and	is	therefore	in	balance.
+The	 body	 prefers	 stability	 to	 pretty	 much	 everything	 else.	 For	 example,
+the	ankle	joint	–	the	actual	point	of	rotation	–	is	behind	the	midfoot,	and	the	calf
+muscles	 attach	 at	 the	 heel	 at	 about	 the	 same	 distance	 behind	 the	 ankle	 as	 the
+midfoot	 is	 in	 front	 of	 it.	 The	 calf	 muscles	 exert	 tension	 on	 the	 heel	 behind	 the
+ankle	 to	 counter	 the	 effects	 of	 the	 leverage	 between	 the	 ankle	 and	 the	 midfoot
+(
+Figure	2-6
+).	The	body	selects	the	midfoot	as	the	balance	point	by	inclining	the
+shins	and	doing	the	calf	work	necessary	to	maintain	this	more	stable	position.	In
+addition,	 the	 gastrocnemius,	 the	 hamstrings,	 and	 the	 quadriceps	 all	 cross	 the
+knee	 joints,	 stabilizing	 the	 position	 of	 the	 knees	 relative	 to	 the	 ankles,	 and	 the
+hips	 are	 embedded	 in	 a	 web	 of	 muscle,	 tendon,	 and	 ligament	 that	 permits	 the
+upright	body	to	squat	down	under	load	and	maintain	a	position	of	balance	over
+the	midfoot.
+
+
+===== PAGE 13 =====
+Figure	2-6.	
+The	midfoot	balance	point	is	the	position	favored	by	the	body	for	balance.	The	point	of	rotation
+at	the	bottom	of	the	leg	–	the	ankle	–	does	not	function	as	the	last	piece	of	the	kinetic	chain	due	to	the
+stability	provided	by	the	anchoring	system	of	the	lower	leg,	calf	muscles,	and	foot;	this	system	maintains
+the	tibial	angle	and	transfers	force	to	the	sole	of	the	foot.	Considering	the	system	this	way	allows	us	to
+calculate	balance	from	the	midfoot	position,	the	point	of	greatest	stability	against	the	floor.
+Consider	the	unloaded	lifter:	if	you	stand	up	straight	with	your	hands	on
+your	hips	and	lean	forward,	even	a	little,	you	can	feel	the	weight	shift	to	the	balls
+of	 your	 feet	 and	 feel	 the	 increased	 tension	 in	 your	 calves	 as	 you	 apply	 some
+force	to	the	mass	of	your	body	above	your	feet	to	keep	from	falling	forward.	If
+you	lean	back,	you	can	feel	the	shift	onto	your	heels	–	lean	back	far	enough,	and
+you	 will	 have	 to	 actually	 hold	 your	 arms	 out	 in	 front	 of	 you	 to	 change	 your
+center	 of	 mass	 so	 that	 you	 don’t	 fall	 back.	 (Our	 bodies	 have	 evolved	 to	 move
+forward,	 and	 forward	 imbalances	 are	 more	 naturally	 handled	 by	 our	 anatomy.)
+You	settle	into	a	position	of	balance	when	the	greatest	amount	of	force	is	needed
+to	perturb	the	position,	or	when	the	least	amount	of	force	is	needed	to	maintain
+the	 position.	 When	 you	 stand,	 this	 position	 is	 where	 your	 COM	 is	 over	 the
+midfoot,	and	when	you	squat	down	and	stand	back	up,	your	body’s	COM	is	in
+balance	when	it	travels	in	a	vertical	line	directly	over	this	point.	Since	you	will
+do	most	barbell	exercises	(except	the	bench	press)	while	standing	on	your	feet,
+this	midfoot	balance	point	becomes	a	critically	important	concept	in	the	analysis
+of	good	exercise	technique.
+Let’s	assume	that	the	bar	in	
+Figure	2-5
+	weighs	315	pounds.	Were	the	bar
+
+
+===== PAGE 14 =====
+forward	 of	 this	 balance	 point,	 it	 would	 still	 weigh	 315	 pounds,	 but	 the	 effort
+required	to	move	it	through	its	range	of	motion	would	be	greater.	The	eccentric
+and	 concentric	 work	 done	 on	 the	 315	 pounds	 would	 be	 harder	 due	 to	 the	 bad
+leverage	position	generated	by	the	distance	the	bar	was	out	of	balance.	And	the
+isometric	 stress	 of	 stabilizing	 the	 load	 in	 the	 bad	 leverage	 position	 adds	 quite
+significantly	to	the	effort.	Keeping	the	315-pound	bar	directly	over	the	midfoot
+through	the	complete	range	of	motion	(ROM)	constitutes	the	most	efficient	way
+the	work	
+should
+	be	done	during	the	lift.	When	the	bar	is	off-balance,	the	added
+energy	you	must	expend	due	to	the	leverage	of	the	off-balance	load	makes	315
+much	harder	to	lift.
+It	doesn’t	take	much	of	an	imbalance	for	the	leverage	to	increase	to	the
+point	 where	 the	 rep	 is	 missed.	 Imagine	 the	 bar	 on	 your	 back	 in	 a	 position	 12
+inches	 in	 front	 of	 the	 midfoot	 as	 you	 try	 to	 squat;	 this	 is	 an	 awkward	 position
+with	even	30%	of	your	1RM	(1	rep	max),	and	the	heavier	the	weight	gets,	the
+smaller	the	imbalance	you	can	deal	with.	You	can	easily	see	that	this	continuum
+ends	up	with	essentially	
+zero
+	amount	of	deviation	tolerable	at	1RM	loads.	This
+concept	applies	to	every	barbell	exercise	where	the	load	must	be	balanced.	So,
+“good	technique”	in	barbell	training	is	easily	and	understandably	defined	as	the
+ability	of	the	lifter	to	keep	the	bar	vertically	aligned	with	the	balance	point.	The
+ability	to	maintain	this	balanced	relationship	between	the	bar	and	the	ground	is
+one	of	the	many	things	trained	with	barbells	that	are	not	trained	in	other	exercise
+methods.	 Since	 balance	 is	 an	 important	 characteristic	 of	 most	 human	 physical
+endeavors,	this	is	one	more	reason	to	base	your	training	on	barbell	exercises.
+Figure	2-5
+	also	shows	the	angles	we	use	to	analyze	the	movement	of	the
+body	 under	 the	 bar	 during	 the	 squat.	 The	
+hip	angle
+	 is	 the	 angle	 formed	 by	 the
+femur	and	the	plane	of	the	torso.	Even	though	the	spine	is	curved	when	held	in
+the	correct	position	to	bear	weight	under	the	bar,	it	is	held	rigid	during	the	squat,
+so	we	can	use	the	concept	of	“the	plane	of	the	torso”	to	describe	the	mechanical
+behavior	of	this	segment	under	the	bar.	The	
+knee	angle
+	is	formed	by	the	femur
+and	 the	 tibia,	 effectively	 illustrating	 the	 relationship	 between	 the	 thigh	 and	 the
+“shank”	 (as	 the	 lower	 leg	 segment	 is	 called).	 The	
+back	angle
+	 is	 formed	 by	 the
+plane	 of	 the	 torso	 and	 the	 floor,	 which	 is	 assumed	 to	 be	 horizontal	 (meaning
+level
+,	perpendicular	to	the	force	of	gravity).
+These	 angles	 describe	 the	 relationships	 of	 their	 constituent	 segments	 to
+each	other	under	the	load	of	the	barbell.	The	back	angle	is	said	to	be	either	more
+vertical
+	or	more	
+horizontal
+,	while	the	knee	and	hip	angles	are	either	more	
+open
+or	more	
+closed
+.	Control	of	the	position	of	these	angles	depends	on	the	muscles
+operating	the	bones	that	form	the	angles.	We	know	that	the	lifter/barbell	system
+will	be	in	balance	when	the	bar	is	directly	over	the	middle	of	the	foot,	and	the
+
+
+===== PAGE 15 =====
+heavier	the	bar,	the	more	precisely	this	position	must	be	kept.	Even	if	the	weight
+is	light	enough	to	remain	in	a	position	of	imbalance,	the	lifter	will	expend	more
+energy	than	he	would	if	the	bar	were	in	balance.
+	
+Figure	2-7.	
+Extra	work	that	must	be	done	on	an	out-of-balance	bar.
+If	the	bar	is	on	the	front	of	the	shoulders,	as	in	the	front	squat,	this	bar
+position	will	require	a	very	vertical	back	angle	if	the	bar	is	to	be	kept	over	the
+midfoot,	as	
+Figure	2-8
+	illustrates.	Notice	the	knee	angle	made	necessary	by	this
+position:	it	is	very	closed.	And	notice	the	hip	angle:	it	is	much	more	open	than	it
+would	be	with	a	more	horizontal	back	angle.	In	this	position,	the	hamstrings	are
+shortened	 because	 their	 proximal	 attachments	 on	 the	 pelvis	 and	 their	 distal
+attachments	at	the	knee	are	as	close	together	as	they	can	be	at	the	bottom	of	a
+squat.	Here,	the	hamstrings	are	functioning	isometrically	to	hold	the	torso	in	the
+nearly	vertical	position	required	of	the	front	squat,	a	much	easier	position	to	hold
+than	 a	 more	 horizontal	 back	 angle	 because	 of	 the	 reduced	 leverage	 against	 the
+hips	(much	more	on	this	later).	But	when	the	hamstrings	are	shortened,	there	is
+not	 enough	 contractile	 capacity	 left	 to	 contribute	 much	 to	 hip	 extension.	 In
+essence,	 the	 hamstrings	 are	 already	 contracted	 in	 the	 bottom	 of	 the	 front	 squat
+and	can’t	contract	much	more.	This	leaves	the	glutes	and	adductors	on	their	own
+to	produce	hip	extension,	and	this	is	why	your	butt	gets	so	sore	when	you	front-
+squat	heavy:	it’s	having	to	do	all	the	work	the	hamstrings	normally	help	with	in
+a	squat.
+
+
+===== PAGE 16 =====
+	
+Figure	2-8.	
+Squat	variations	commonly	seen	in	the	gym.	
+(A)	The	low-bar	squat,	our	preferred	position	and
+the	form	referred	to	in	this	text	as	“the	squat.”	(B)	The	front	squat,	used	to	catch	and	recover	from	a	clean
+and	as	an	assistance	exercise	by	Olympic	weightlifters.
+The	upshot	of	this	situation	is	that	the	front	squat	leaves	out	much	of	the
+hamstrings’	function,	and	we’d	like	to	use	the	hamstrings	when	we	squat	so	that
+we	 can	 get	 them	 strong.	 The	 front	 squat	 is	 therefore	 a	 poor	 choice	 for	 training
+the	 posterior	 chain.	 To	 best	 recruit	 the	 hamstrings,	 and	 let	 them	 contribute	 the
+most	they	can	to	hip	extension,	we	need	to	use	a	squat	form	that	produces	a	more
+closed	 hip	 angle	 and	 a	 more	 open	 knee	 angle.	 At	 the	 bottom	 of	 this	 squat,	 the
+hamstrings	 are	 contracted	 isometrically	 –	 that	 is,	 they	 are	 stretched	 out
+proximally,	by	the	attachments	at	the	pelvis,	even	as	they	are	shortened	distally
+because	of	the	flexing	knees.	As	the	knees	and	hips	extend	during	the	ascent,	the
+hamstrings	have	to	work	hard	to	maintain	tension	on	the	pelvis,	 and	to	control
+the	effects	of	the	increased	leverage	demands	of	the	more-horizontal	back	angle.
+The	back	angle	largely	determines	the	hip	angle,	and	the	back	angle	enables	the
+hamstrings	to	contribute	more	force	to	the	squat.
+And	 when	 we	 use	 that	 more	 horizontal	 back	 angle,	 the	 bar	 must	 be
+placed	on	the	back	such	that	the	bar	is	over	the	middle	of	the	foot.	The	lower	the
+bar	 is	 on	 the	 back,	 the	 more	 horizontal	 the	 back	 angle	 can	 be.	 The	 bar	 should
+therefore	be	in	the	lowest	secure	position	it	can	occupy	on	the	back,	right	below
+the	spine	of	the	scapula	–	that	bump	on	your	shoulder	blade	you	can	feel	when
+you	reach	across	and	touch	the	back	of	your	shoulder.	Any	lower	than	this,	and
+the	bar	scoots	down	a	little	every	rep	of	the	set.
+If	the	adductors	–	the	groin	muscles	–	get	their	share	of	the	load,	too,	that
+
+
+===== PAGE 17 =====
+adds	 muscle	 mass	 to	 the	 exercise.	 When	 we	 use	 a	 moderate	 stance	 with
+shoulder-width	 heels,	 toes	 pointing	 out	 at	 about	 30	 degrees,	 and	 knees	 shoved
+out	so	that	the	thighs	stay	parallel	to	the	feet,	then	the	groin	muscles	stretch	out
+as	the	hips	are	lowered.	If	the	muscles	are	stretched	out,	they	are	in	the	position
+they	 must	 be	 in	 to	 contract	 and	 contribute	 force	 to	 the	 hip	 extension.	 The
+muscles	that	hold	the	knees	out	–	the	external	rotators	of	the	hip	–	are	engaged	as
+well,	thus	adding	to	the	muscle	mass	involved	in	the	squat.
+The	low-bar	squat,	or	in	this	book,	just	the	Squat,	is	not	the	same	form
+used	by	suit-and-wraps-equipped	powerlifters,	who	are	trying	to	get	the	most	out
+of	their	squat	suit,	an	expensive,	very	tight	singlet	that	is	designed	to	resist	hip
+flexion	 and	 store	 elastic	 energy	 in	 the	 eccentric	 phase,	 and	 therefore	 aid	 hip
+extension.	To	this	end,	some	powerlifters	use	a	very	wide	stance	and	as	vertical	a
+shin	position	as	they	can	produce.	Some	lifters	use	a	high-bar	position	with	low
+elbows,	a	more	vertical	back	angle,	and	an	upward	eye	gaze	(quite	different	from
+the	squat	style	used	in	this	book).	A	wide	stance	and	vertical	shins	open	the	knee
+angle	 and	 close	 the	 hip	 angle,	 thus	 permitting	 the	 more	 effective	 use	 of	 the
+suit/hip	extension.	Knee	wraps	are	used	to	resist	knee	flexion,	and	like	the	squat
+suit,	 they	 store	 elastic	 energy	 during	 the	 eccentric	 phase.	 Our	 stance,	 which	 is
+not	nearly	as	wide,	permits	more	forward	travel	of	the	knees	and	more	use	of	the
+quadriceps.	In	fact,	every	aspect	of	the	technique	used	in	our	version	of	the	squat
+has	 been	 chosen	 specifically	 to	 maximize	 the	 amount	 of	 muscle	 mass	 and	 the
+range	of	motion	used	so	that	we	can	lift	as	much	weight	as	possible	through	that
+range	of	motion	and	thus	get	stronger.
+If	 the	 bar	 is	 placed	 high	 on	 the	 back	 –	 on	 top	 of	 the	 traps,	 where	 most
+people	 start	 off	 carrying	 it	 because	 it’s	 an	 easier	 and	 more	 obvious	 place	 for	 a
+bar	–	the	back	angle	must	accommodate	the	higher	position	by	becoming	more
+vertical	to	keep	the	bar	over	the	midfoot.	If	the	back	angle	is	more	vertical,	the
+knee	 angle	 must	 become	 more	 closed	 because	 the	 knees	 get	 shoved	 forward
+when	the	hips	open	up	(
+Figure	2-8
+	again).	In	other	words,	the	higher	bar	position
+makes	the	back	squat	more	like	the	front	squat,	and	we	don’t	want	to	front-squat
+for	general	strength	development	because	it	doesn’t	effectively	train	the	source
+of	whole-body	power:	the	posterior	chain.
+The	 high-bar,	 or	 “Olympic,”	 squat	 has	 been	 the	 preferred	 form	 of	 the
+exercise	for	Olympic	weightlifters	for	decades.	This	seems	to	be	largely	a	matter
+of	 tradition	 and	 inertia,	 since	 there	 are	 compelling	 reasons	 for	 weightlifters	 to
+use	 the	 low-bar	 position,	 too.	 Since	 the	 squat	 is	 not	 a	 contested	 lift	 in
+weightlifting,	and	since	Olympic	lifters	front-squat	to	directly	reinforce	the	squat
+clean	anyway,	the	reasons	for	weightlifters	to	use	the	low-bar	squat	in	training
+must	 involve	 other	 considerations.	 The	 squat	 makes	 you	 strong,	 and
+
+
+===== PAGE 18 =====
+weightlifting	is	a	strength	sport;	even	if	it	is	terribly	dependent	on	technique,	the
+winner	is	still	the	one	who	lifts	the	most	weight.	The	high-bar	position	may	be
+harder,	 but	 the	 low-bar	 position	 uses	 more	 muscle,	 allows	 more	 weight	 to	 be
+lifted,	and	consequently	prepares	the	lifter	for	heavier	weights.
+If	an	argument	on	the	basis	of	specificity	is	to	be	made,	the	low-bar	squat
+is	also	more	applicable	to	the	mechanics	of	Olympic	weightlifting	than	the	high-
+bar	squat.	The	low-bar	position,	with	the	weight	sitting	just	below	the	spine	of
+the	 scapula,	 much	 more	 closely	 approximates	 the	 mechanics	 of	 the	 position	 in
+which	the	bar	is	pulled	off	of	the	floor.	As	the	discussions	of	pulling	mechanics
+in	 the	 Deadlift	 and	 Power	 Clean	 chapters	 illustrate,	 the	 shoulder	 blades	 are
+directly	 above	 the	 bar	 when	 it	 leaves	 the	 floor	 in	 a	 heavy	 pull,	 and	 they	 stay
+there	until	the	bar	rises	well	above	the	knees.	This	is	true	for	both	the	clean	and
+the	 snatch,	 with	 the	 snatch	 being	 done	 from	 a	 position	 even	 less	 similar	 to	 the
+Olympic	squat	than	the	clean	is.	Low-bar	squats	done	with	this	similar,	relatively
+horizontal	 back	 angle	 train	 the	 movement	 pattern	 more	 directly	 than	 does	 the
+high-bar	 version,	 which	 places	 the	 back	 at	 a	 higher	 angle	 due	 to	 the	 higher
+position	 of	 the	 bar	 on	 the	 traps.	 And	 they	 do	 it	 through	 a	 nice,	 long	 range	 of
+motion	due	to	the	fact	that	the	squat	goes	to	a	deeper	hip	position	than	the	start
+position	of	either	the	snatch	or	the	clean	and	jerk.
+If	the	back	angle	is	kept	constant	for	both	the	low-bar	squat	and	the	pull
+from	 the	 floor	 (which	 it	 must	 be,	 see	
+back	 angle	 discussion	 in	 the	 deadlift
+chapter
+),	they	are	very	similar	movements	–	more	similar	than	a	high-bar	squat
+and	a	pull	of	any	type.	If	an	argument	is	to	be	made	for	squatting	with	a	form
+specific	 to	 the	 motor	 pathway	 requirements	 of	 the	 sport,	 the	 low-bar	 position
+would	 be	 that	 form.	 And	 if	 an	 argument	 is	 made	 that	 the	 squat	 need	 not	 be
+similar,	 the	 low-bar	 squat	 still	 makes	 more	 sense	 because	 it	 can	 be	 done	 with
+heavier	weights.
+Squat	Depth	–	Safety	and	Importance
+	
+The	full	squat	is	the	preferred	lower-body	exercise	for	safety	as	well	as
+for	athletic	strength.	The	squat,	
+when	performed	correctly
+,	not	only	is	the	safest
+leg	 exercise	 for	 the	 knees,	 but	 also	 produces	 more	 stable	 knees	 than	 any	 other
+leg	exercise	does.	Correctly	is	deep,	with	hips	dropping	below	level	with	the	top
+of	the	patellas	(see	
+Figure	2-1
+).	Correctly	is	therefore	full	range	of	motion.
+	
+Any	squat	that	is	not	deep	is	a	partial	squat,	and	partial	squats	stress	the
+knees	 and	 the	 quadriceps	 without	 stressing	 the	 glutes,	 the	 adductors,	 or	 the
+hamstrings.	In	full	squats,	the	hamstrings,	groin	muscles,	and	glutes	come	under
+
+
+===== PAGE 19 =====
+load	as	the	knees	are	shoved	out,	the	hips	are	pushed	back,	and	the	back	assumes
+the	correct	angle	on	the	way	down	for	hip	drive	to	occur	on	the	way	up.	At	the
+very	bottom	of	the	squat,	the	hips	are	in	flexion	and	the	pelvis	tilts	forward	with
+the	torso.	In	this	deep	squat	position	(
+Figure	2-9
+),	several	muscle	groups	reach	a
+full	stretch:	the	adductors	(attached	between	the	medial	pelvis	and	various	points
+on	the	medial	femur),	and	the	glutes	and	external	rotators	(attached	between	the
+pelvis	 and	 the	 lateral	 femur).	 Here,	 the	 function	 of	 the	 hamstring	 muscles
+(attached	 to	 the	 tibia	 and	 to	 the	 ischial	 tuberosity	 of	 the	 pelvis),	 is	 primarily
+isometric,	 since	 they	 don’t	 necessarily	 change	 length	 on	 the	 way	 down.	 In	 the
+bottom	 of	 the	 squat,	 the	 tightened	 hamstrings,	 adductors,	 glutes,	 and	 external
+rotators	 provide	 a	 slight	 rebound,	 which	 will	 look	 like	 a	 “bounce”;	 this	 is	 the
+stretch	reflex	we	discussed	earlier.	The	tension	of	the	stretch	pulls	backwards	on
+the	tibia,	balancing	the	force	produced	by	the	anterior	quadriceps	attachment	on
+the	tibial	tuberosity.	The	hamstrings	finish	their	job,	with	help	from	the	quads,
+adductors,	and	glutes,	by	extending	the	hips.
+	
+Figure	2-9.	
+Muscular	actions	on	the	knee.	In	the	deep	squat	position	(A),	the	anterior	force	provided	by	the
+quadriceps	is	balanced	by	the	posterior	force	provided	by	the	hamstrings.	The	depth	is	the	key:	partial
+(high)	squats	(B)	predominantly	work	the	quadriceps	and	therefore	lack	balance.
+A	 partial	 squat	 done	 with	 an	 upright	 torso	 and	 vertical	 back	 angle	 is
+typical	of	most	people’s	attempts	to	squat,	because	we	have	all	been	told	that	the
+back	 must	 be	 vertical	 to	 reduce	
+shear
+,	 the	 sliding	 forces	 that	 occur	 along	 a
+
+
+===== PAGE 20 =====
+segment	 in	 rotation.	 Shear	 between	 the	 vertebral	 segments	 is	 supposed	 to
+somehow	 disarticulate	 your	 spine,	 despite	 the	 fact	 that	 this	 cannot	 and	 has	 not
+ever	occurred.	But	in	a	misinformed	effort	to	protect	the	back,	this	advice	results
+in	a	lot	of	unnecessary	stress	on	the	knees.	As	we’ve	already	discussed,	however,
+the	vertical	back	angle	fails	to	fully	load	the	hamstrings.	Therefore,	they	cannot
+exert	the	posterior	force	needed	to	oppose	and	balance	the	anterior	force	exerted
+by	the	quadriceps	and	their	attachments	to	the	front	of	the	tibia,	below	the	knee.
+(In	other	words,	there’s	no	force	pulling	backwards	to	balance	the	forces	that	are
+pulling	the	knees	and	tibias	forward.)	The	result	is	an	actual	anterior	shear	on	the
+knee.	And	like	a	front	squat,	the	partial	squat	also	forces	the	knees	quite	forward
+of	 the	 midfoot	 –	 much	 more	 so	 than	 the	 low-bar	 squat	 form	 we	 will	 be	 using,
+which	keeps	the	knees	back	and	uses	the	hips	as	the	primary	mover	of	the	load.
+This	 lack	 of	 posterior	 support	 produces	 an	 anterior-dominant	 force	 distribution
+on	the	knee:	the	further	back	the	hips	are,	the	more	hip	muscle	you	use,	and	the
+further	 forward	 the	 knees,	 the	 more	 quad	 you	 use.	 Many	 cases	 of	 patellar
+tendinitis	have	been	caused	by	this	incorrect	squat	technique.	Even	when	partial
+squats	are	done	with	the	correct	back	angle,	they	fail	to	work	the	full	range	of
+motion	and	therefore	fail	to	perform	to	their	potential	as	an	exercise.
+Figure	2-10.	
+The	variation	in	squat	depths	commonly	seen	in	the	gym.	
+Left	to	right:
+	Quarter-squat,	Half-
+squat,	a	position	often	confused	with	parallel,	where	the	undersurface	of	the	thigh	is	parallel	with	the
+ground,	Parallel	squat	according	to	the	criteria	established	in	
+Figure	2-1
+,	and	“Ass-to-grass”	squat.
+The	 hamstrings	 benefit	 from	 their	 involvement	 in	 the	 full	 squat	 by
+getting	strong	in	direct	proportion	to	their	anatomically	proper	share	of	the	load
+in	the	movement,	as	determined	by	the	mechanics	of	the	movement	itself.	This
+fact	is	often	overlooked	when	the	medical	community	considers	anterior	cruciate
+ligament	(ACL)	tears	and	their	relationship	to	conditioning	programs.	The	ACL
+stabilizes	 the	 knee:	 it	 prevents	 the	 tibia	 from	 sliding	 forward	 relative	 to	 the
+
+
+===== PAGE 21 =====
+femur.	 As	 we	 have	 already	 seen,	 so	 does	 the	 hamstring	 group	 of	 muscles.
+Underdeveloped,	 weak	 hamstrings	 thus	 play	 a	 role	 in	 ACL	 injuries,	 and	 full
+squats	 strengthen	 the	 hamstrings.	 In	 the	 same	 way	 the	 engaged	 hamstrings
+protect	 the	 knees	 during	 a	 full	 squat,	 hamstrings	 that	 are	 stronger	 due	 to	 full
+squats	 can	 protect	 the	 ACLs	 during	 the	 activities	 that	 we	 are	 squatting	 to
+condition	for.	With	strong	hamstrings	and	the	knees-back	position	provided	by
+the	 low-bar	 version	 of	 the	 squat,	 the	 hips	 bear	 most	 of	 the	 stress	 of	 the
+movement.	So	athletes	who	are	missing	an	ACL	can	safely	squat	heavy	weights
+because	 the	 ACL	 is	 under	 no	 stress	 in	 a	 correctly	 performed	 full	 squat	 (see
+Figure	2-11
+).
+Figure	2-11.
+	Forces	on	the	knee	in	the	squat.	The	hamstrings	and	adductors	exert	a	posterior	tension	on	the
+tibia,	and	the	net	effect	of	the	anterior	quadriceps	tendon	insertion	is	an	anterior	force	against	the	tibial
+plateau.	With	sufficient	depth	and	correct	knee	position,	anterior	and	posterior	forces	on	the	knee	are
+balanced.	The	anterior	(ACL)	and	posterior	cruciate	ligaments	(PCL)stabilize	the	anterior	and	posterior
+movements	of	the	distal	femur	relative	to	the	proximal	tibia.	In	a	correctly	performed	squat,	these	ligaments
+are	essentially	unloaded.
+Another	problem	with	partial	squats	is	the	fact	that	very	heavy	loads	can
+be	moved	due	to	the	short	range	of	motion	and	the	greater	mechanical	efficiency
+of	 the	 quarter-squat	 position.	 A	 trainee	 doing	 quarter-squats	 is	 predisposed	 to
+back	injuries	as	a	result	of	the	extreme	spinal	loading	that	comes	from	putting	a
+
+
+===== PAGE 22 =====
+weight	on	his	back	that	might	be	more	than	three	times	the	weight	that	he	can
+safely	handle	in	a	correct	deep	squat.	A	lot	of	football	coaches	are	fond	of	partial
+squats	because	they	allow	the	coaches	to	claim	that	their	17-year-old	linemen	are
+all	“squatting”	600	pounds.	Your	interest	is	in	getting	strong	(at	least	it	should
+be),	not	in	playing	meaningless	games	with	numbers.	If	it’s	too	heavy	to	squat
+below	parallel,	it’s	too	heavy	to	have	on	your	back.
+	
+There	 is	 simply	 no	 other	 exercise,	 and	 certainly	 no	 machine,	 that
+produces	 the	 level	 of	 central	 nervous	 system	 activity,	 improved	 balance	 and
+coordination,	 skeletal	 loading	 and	 bone	 density	 enhancement,	 muscular
+stimulation	 and	 growth,	 connective	 tissue	 stress	 and	 strength,	 psychological
+demand	 and	 toughness,	 and	 overall	 systemic	 conditioning	 than	 the	 correctly
+performed	 full	 squat.	 In	 the	 absence	 of	 an	 injury	 that	 prevents	 its	 being
+performed,	everyone	who	lifts	weights	should	learn	to	squat,	correctly.
+Learning	to	Squat
+	
+We	 will	 approach	 the	 squat	 in	 two	 phases:	 first	 unloaded,	 to	 solve
+problems	associated	with	the	bottom	position,	and	then	loaded,	to	learn	how	to
+apply	 the	 bottom	 position	 to	 the	 hip	 drive	 used	 for	 heavier	 weights.	 Since	 the
+majority	 of	 the	 problems	 with	 the	 squat	 happen	 at	 the	 bottom,	 this	 method
+expedites	the	process	quite	effectively.
+Generating	hip	drive
+	
+We	will	use	a	fairly	neutral	foot	placement,	with	the	heels	about	shoulder
+width	 apart	 and	 the	 toes	 pointed	 out	 at	 about	 30	 degrees.	 An	 excessively	 wide
+stance	 causes	 the	 adductors	 to	 reach	 the	 end	 of	 their	 extensibility	 early,	 and
+excessive	 narrowness	 causes	 the	 thighs	 to	 jam	 against	 the	 belly.	 Both	 of	 these
+problems	 prevent	 you	 from	 reaching	 proper	 depth.	 Shoulder	 width	 is
+proportionate	to	pelvic	width	in	most	people,	and	experience	has	shown	that	this
+width	works	well	for	most	of	the	population.	
+Many	people	will	assume	a	stance
+with	toes	pointed	too	forward,	so	you	may	need	to	point	them	out	more	than
+you	want	to.
+	Look	down	at	your	feet	and	make	a	mental	picture	of	what	you	see.
+
+
+===== PAGE 23 =====
+Figure	2-12.	
+(A)	Map	of	foot	placement	and	(B)	stance	in	the	squat,	as	seen	from	above.	(C)	Heel
+
+
+===== PAGE 24 =====
+placement	by	shoulder	width.
+Now	comes	the	crucial	part	of	learning	the	movement.	You	are	going	to
+assume	the	position	you	will	be	in	at	the	bottom	of	a	correct	squat,	without	the
+bar.	 This	 method	 works	 well	 because	 you	 can	 easily	 correct	 any	 errors	 in
+position	 before	 the	 bar	 adds	 another	 variable	 to	 the	 system.	 And	 if	 you’ve
+already	 been	 in	 the	 correct	 bottom	 position	
+without
+	 the	 bar,	 getting	 into	 that
+position	again	
+with
+	the	bar	is	easy.	Assume	the	correct	stance	and	squat	down,
+all	 the	 way.	 Don’t	 even	 think	 about	 stopping	 high;	 just	 go	 on	 down	 to	 the
+bottom.	Sometimes	a	lack	of	flexibility	or	a	failure	to	point	your	toes	out	enough
+will	 alter	 your	 stance	 on	 the	 way	 down,	 so	 make	 sure	 you	 have	 assumed	 the
+correct	foot	position.
+Next,	put	your	elbows	against	your	knees,	with	the	palms	of	your	hands
+together,	and	shove	your	knees	out	(
+Figure	2-13
+).	This	will	usually	be	a	decent
+bottom	 position,	 and	 if	 your	 flexibility	 is	 not	 great,	 the	 position	 will	 act	 as	 a
+stretch	 if	 you	 maintain	 it	 for	 a	 few	 seconds.	 Remember,	
+proper	 depth	 is
+essential	 in	 the	 squat
+,	 and	 this	 low	 bottom	 position	 lays	 the	 groundwork	 for
+your	attaining	good	depth	from	now	on.
+	
+
+
+===== PAGE 25 =====
+Figure	2-13.	
+Use	your	elbows	to	stretch	into	the	correct	position	at	the	bottom.	The	femurs	are	parallel	to
+the	feet,	the	feet	are	flat	on	the	ground	at	the	correct	angle,	the	hips	are	back,	the	knees	are	just	a	little
+forward	of	the	toes,	and	the	back	is	at	an	angle	(about	45	degrees)	that	will	place	the	bar	over	the	middle	of
+the	foot.
+Stay	 in	 the	 bottom	 position	 for	 a	 few	 seconds	 to	 allow	 for	 some
+stretching.	If	you	get	fatigued	by	holding	the	position,	your	flexibility	might	not
+be	quite	what	it	should	be.	Stand	up	and	rest	for	a	few	seconds.	Then	go	back
+down	to	get	some	more	stretching	done	and	to	reinforce	your	familiarity	with	the
+bottom	 position.	 This	 is	 the	 most	 important	 part	 of	 learning	 to	 squat	 correctly
+because	good	depth	is	the	difference	between	a	squat	and	a	partial	squat.
+Now	 is	 the	 time	 to	 notice	 some	 important	 details	 about	 the	 bottom
+position.	Your	feet	are	flat	on	the	floor,	your	knees	are	shoved	out	to	where	they
+are	 in	 a	 parallel	 line	 with	 your	 feet,	 and	 your	 knees	 are	 just	 a	 little	 in	 front	 of
+your	toes.	Your	back	should	be	as	flat	as	you	can	get	it,	but	if	it’s	not	perfect,
+we’ll	 fix	 it	 later.	 Also	 notice	 that	 your	 back	 is	 inclined	 at	 about	 a	 45-degree
+angle,	not	at	all	vertical.	You	may	think	it’s	vertical,	but	it	won’t	be	and	it’s	not
+supposed	to	be.	And	your	eyes	are	looking	down	at	the	floor	a	few	feet	in	front
+of	you.
+After	you’ve	established	the	bottom	position,	come	up	out	of	the	bottom
+by	 driving	 your	 butt	 straight	 up	 in	 the	 air.	
+Up
+,	 not	 forward.	 This	 movement
+keeps	your	weight	solidly	over	the	whole	foot	instead	of	shifting	it	to	the	toes.
+Think	 about	 a	 chain	 hooked	 to	 your	 hips,	 pulling	 you	 straight	 up	 out	 of	 the
+bottom	 (
+Figure	 2-14
+).	 Don’t	 think	 about	 your	 knees	 straightening	 out,	 don’t
+
+
+===== PAGE 26 =====
+think	about	your	feet	pushing	against	the	floor,	and	don’t	even	think	about	your
+legs.	 Just	 drive	 your	 hips	 up	 out	 of	 the	 bottom,	 and	 the	 rest	 will	 take	 care	 of
+itself.
+Figure	2-14.	
+An	interesting	way	to	visualize	hip	drive	in	the	squat.
+This	 important	 point	 should	 not	 be	 missed.	 Our	 previous	 discussion
+about	hip	drive	and	the	use	of	the	hamstrings	in	the	squat	applies	here.	The	squat
+is	 not	 a	 leg	 press,	 and	 the	 idea	 of	 pushing	 the	 floor	 with	 the	 feet	 provides	 an
+inadequate	 signal	 for	 the	 hamstrings,	 adductors,	 and	 glutes	 to	 provide	 their
+power	out	of	the	bottom.	Hip	extension	is	the	first	part	of	the	upward	drive	out
+of	the	bottom.	When	you	think	about	raising	your	butt	up	out	of	the	bottom,	the
+nervous	 system	 has	 a	 simple,	 efficient	 way	 to	 fire	 the	 correct	 motor	 units	 to
+initiate	hip	drive.
+Eye	gaze	direction	plays	an	important	part	in	this	process	of	driving	the
+hips,	and	it	is	introduced	even	before	the	bar	becomes	part	of	the	squat.	Looking
+up	 at	 the	 ceiling	 when	 squatting	 has	 so	 many	 detrimental	 effects	 on	 proper
+technique	 that	 it	 is	 absolutely	 amazing	 that	 so	 many	 people	 still	 advise	 their
+lifters	to	do	it.	It	interferes	with	the	correct	bottom	position,	with	hip	drive	out	of
+the	 bottom,	 and	 with	 correct	 chest	 position.	 It	 changes	 the	 focal	 point	 from	 a
+close,	 manageable	 spot	 to	 one	 that	 is	 farther	 away.	 And	 the	 neck	 position	 that
+results	 from	 looking	 at	 the	 ceiling	 is	 inherently	 unsafe:	 to	 place	 the	 cervical
+spine	in	extreme	overextension	and	then	to	place	a	heavy	weight	on	the	trapezius
+muscles	 directly	 underneath	 it	 is,	 at	 best,	 imprudent.	 The	 normal	 anatomical
+
+
+===== PAGE 27 =====
+position	 for	 the	 cervical	 spine	 is	 the	 preferred	 position	 when	 the	 weights	 get
+heavy.
+The	habit	of	looking	up	is	also	a	very	difficult	problem	to	correct	if	it	has
+existed	for	any	length	of	time.	Lifters	whose	high	school	football	coaches	taught
+them	to	look	up	during	the	squat	often	have	a	very	difficult	time	with	changing
+the	eye	gaze	direction,	even	when	we	have	effectively	demonstrated	that	looking
+down	works	so	much	better.	An	embedded	movement	pattern	is	always	easier	to
+perform	than	a	new	one,	and	it	will	be	the	default	movement	pattern	if	conscious
+control	is	shifted	to	another	aspect	of	the	new	technique.
+Do	 an	 experiment	 or	 two	 to	 demonstrate	 for	 yourself	 the	 effect	 of	 gaze
+direction.	Assume	the	bottom	position	with	knees	out,	toes	out,	and	heels	down.
+Put	your	chin	down	slightly	and	look	at	a	point	on	the	floor	4	or	5	feet	in	front	of
+you.	Now	drive	your	hips	up	out	of	the	bottom,	and	take	note	of	how	this	feels.
+Now	 do	 the	 same	 thing	 while	 looking	 at	 the	 ceiling.	 If	 you	 have	 a	 training
+partner	or	coach,	get	in	the	bottom	position	and	have	him	block	your	hips,	with	a
+hand	placed	firmly	on	your	lower	back	and	pushing	straight	down,	so	that	you
+have	something	to	push	up	on,	but	not	so	that	he	pushes	you	forward.	Push	up
+against	the	resistance	while	looking	down	at	your	floor	focus	point,	and	note	the
+effectiveness	 of	 your	 hip	 drive	 and	 the	 power	 it	 produces.	 Then	 try	 this
+movement	again	while	looking	up.	You	will	discover	an	amazing	thing	–	that	the
+chin-down	 (looking	 down	 keeps	 the	 chin	 down),	 eyes-down	 position	 enables
+your	hip	drive	to	function	almost	automatically.	In	contrast,	the	upward	eye	gaze
+pulls	 the	 chest	 forward,	 the	 knees	 forward,	 and	 the	 hips	 forward	 –	 just	 a	 little,
+but	 enough	 to	 produce	 a	 profound	 effect.	 It	 slacks	 the	 hamstrings	 and	 all	 the
+posterior	muscles	we	are	trying	to	keep	tight	so	that	we	can	use	them	to	drive	the
+hips	 up.	 The	 first	 time	 you	 do	 this	 experiment	 will	 convince	 you	 that	 looking
+down	is	more	efficient.
+
+
+===== PAGE 28 =====
+Figure	2-15.	
+Blocking	the	hips	to	learn	the	effect	of	eye	gaze	direction.	An	upward-directed	gaze	quite
+effectively	diminishes	the	ability	to	use	the	posterior	chain	during	the	drive	up	from	the	bottom.
+Looking	 at	 the	 floor	 also	 provides	 the	 eyes	 with	 a	 fixed	 position
+reference.	 Using	 this	 reference,	 you	 can	 easily	 identify	 any	 deviation	 from	 the
+correct	movement	pattern	and	adjust	it	as	it	happens.	The	ceiling	also	provides	a
+reference,	but	the	neck	position	is	unsafe,	and	anything	you’re	looking	at	upward
+will	be	farther	away	than	the	floor	when	you’re	at	the	bottom	of	the	squat.	It’s
+hard	to	imagine	a	room	in	which	the	floor	isn’t	closer	to	the	eyes	than	the	ceiling
+is;	the	floor	is	therefore	more	useful	as	a	reference	–	smaller	movements	can	be
+detected	against	the	closer	point.
+
+
+===== PAGE 29 =====
+Most	people	will	have	more	trouble	with	this	change	in	their	eye	gaze
+direction	than	with	any	other	aspect	of	this	squatting	method.
+	 To	 correct	 the
+error	of	looking	up,	fix	your	eyes	on	a	position	on	the	floor	4	or	5	feet	in	front	of
+you.	If	you’re	training	close	to	a	wall,	find	a	place	to	look	at	that	is	low	on	the
+wall	 and	 results	 in	 the	 same	 neck	 position.	 Stare	 at	 this	 point,	 and	 get	 used	 to
+looking	 at	 it	 so	 that	 it	 requires	 no	 conscious	 effort.	 Most	 people,	 if	 they	 are
+looking	 down,	 will	 not	 raise	 their	 heads	 to	 the	 point	 where	 neck	 position	 is
+affected.	 Inventive	 coaches	 have	 used	 tennis	 balls	 for	 the	 purpose	 of
+demonstrating	a	chin-down,	chest-up	position	(
+Figure	2-16
+).
+Figure	2-16.	
+A	tennis	ball	can	teach	the	correct	chin/neck	relationship.
+Adding	the	bar
+	
+Now	 you’re	 ready	 to	 squat.	 You	 have	 already	 been	 in	 the	 position	 you
+will	go	to	at	the	bottom,	and	now	you’re	just	going	back	down	there	with	the	bar.
+First,	chalk	your	hands.	Chalk	is	always	a	good	idea	because	it	dries	out	the	skin.
+Dry	 skin	 is	 less	 prone	 to	 folding	 and	 abrasion	 than	 moist	 skin	 and	 therefore	 is
+less	prone	to	problem	callus	formation.	If	the	weight	room	is	not	equipped	with
+chalk,	bring	your	own.	If	the	gym	complains,	change	gyms.
+The	 squat	 begins	 at	 the	 power	 rack	 or	 the	 squat	 stands,	 whichever	 is
+available.	Set	the	rack	height	so	that	the	bar	in	the	rack	is	at	about	the	level	of
+
+
+===== PAGE 30 =====
+your	mid-sternum.	Many	people	will	perceive	this	as	too	low,	but	it’s	better	to	be
+a	little	low	taking	the	bar	out	of	the	rack	than	to	have	to	tiptoe	back	into	the	rack
+with	a	heavy	weight.	Often,	this	position	in	the	empty	rack	will	look	low	because
+the	diameter	of	the	bar	sitting	in	the	hooks	tells	the	eye	a	different	story	about	its
+true	height	in	the	rack.	When	the	bar	is	placed	in	the	rack,	the	eye	will	be	more
+comfortable	with	the	setting.	And	remember,	we	are	placing	the	bar	in	a	lower
+position	than	the	top	of	the	traps,	so	you’ll	need	the	rack	lower	than	you	think.
+You’d	 rather	 have	 the	 rack	 set	 a	 little	 too	 low	 than	 a	 little	 too	 high,	 and	 most
+people	 are	 not	 as	 tall	 as	 they	 think	 they	 are.	
+Most	people	will	want	to	use	a
+position	in	the	rack	that	is	too	high.	
+If	your	shoulders	are	not	flexible	enough	to
+assume	 the	 low-bar	 position	 at	 first,	 they	 should	 stretch	 out	 over	 a	 couple	 of
+weeks.
+Face	 the	 bar.	 Always	 an	 empty	 bar	 at	 first.	 ALWAYS.	 There	 will	 be
+plenty	of	time	very	soon	to	add	weight.	Take	an	even	grip	on	the	bar,	measured
+from	the	markings	placed	on	the	bar	for	this	purpose.	A	standard	power	bar	has
+16–17	inches	between	the	ends	of	the	outside	knurl,	and	32	inches	between	the
+finger	 marks,	 those	 one-eighth-inch	 gaps	 in	 the	 knurl	 indicating	 a	 legal	 bench-
+press	grip.	Grip	width	for	the	squat	will	obviously	vary	with	shoulder	width	and
+flexibility,	but	in	general,	the	hands	will	be	between	these	two	markings	on	this
+type	 of	 bar.	 A	 narrower	 grip	 allows	 a	 flexible	 person	 to	 better	 support	 the	 bar
+with	 the	 posterior	 muscles	 of	 the	 shoulders	 when	 the	 elbows	 are	 lifted,	 and	 a
+wider	grip	allows	an	inflexible	person	to	get	more	comfortable	under	the	bar.	In
+either	 case,	 a	 narrower	 grip	 tightens	 your	 shoulder	 muscles	 so	 that	 the	 bar	 is
+supported	by	muscle	and	doesn’t	dig	into	your	back.	
+	
+
+
+===== PAGE 31 =====
+Figure	2-17.	
+A	comparison	of	wide	and	narrow	grips.	Note	the	difference	in	tightness	of	the	upper	back
+muscles	and	the	resulting	difference	in	bar	support	potential.
+The	thumbs	should	be	placed	on	top	of	the	bar	so	that	the	wrists	can	be	held	in	a
+straight	line	with	the	forearms.	The	elbows	should	be	cranked	up	to	trap	the	bar
+between	the	hands	and	the	back.	If	a	lack	of	flexibility	in	the	chest	and	shoulders
+prevents	 your	 achieving	 this	 position,	 use	 the	 high-bar	 position	 until	 proper
+stretching	can	make	you	flexible	enough	to	get	the	bar	down	to	a	better	position.
+If	you’re	flexible	enough	now,	take	a	grip	wide	enough	to	permit	straight	wrists
+under	the	bar,	and	then	with	each	set,	narrow	your	grip	a	little	until	it	is	tight	and
+secure.	Mark	this	position	as	the	grip	you	will	use.	
+
+
+
+===== PAGE 32 =====
+Figure	2-18.	
+Wrist	alignment	on	the	bar.	The	correct	grip	keeps	the	hand	above	the	bar	and	keeps	all	of	the
+weight	of	the	bar	on	the	back.	An	incorrect	grip	intercepts	some	of	the	weight,	loading	the	wrists	and
+elbows.	Note	that	the	thumb	is	on	top	of	the	bar	and	the	hand	is	between	the	outer	ring	and	the	inner	edge	of
+the	knurling.
+With	your	grip	in	place,	and	your	hands	and	thumbs	on	top	of	the	bar,	dip
+your	head	under	the	bar,	and	come	up	into	position	with	the	bar	on	your	back.
+Place	the	bar	in	the	
+correct	position
+,	just	immediately	under	the	bone	you	feel	at
+the	top	of	the	shoulder	blades	–	the	spine	of	the	scapula	–	and	then	secure	it	in
+place	by	lifting	your	elbows	and	chest	at	the	same	time	(
+Figure	2-20
+).	It	should
+feel	 as	 though	 the	 bar	 is	 resting	 on	 a	 “shelf”	 under	 the	 traps	 and	 on	 top	 of	 the
+posterior	 deltoids.	 This	 action	 tightens	 the	 muscles	 of	 your	 back	 and	 lifts	 your
+chest,	 placing	 the	 thoracic	 spine	 in	 an	 extended,	 straight	 position	 and	 thereby
+fixing	many	of	the	problems	encountered	with	a	round-back	position.	Enormous
+weights	 can	 be	 safely	 handled	 this	 way	 later.	
+Most	people	starting	with	this
+method	will	place	the	bar	too	high	on	the	back
+,	perhaps	just	above	the	scapular
+spine	instead	of	just	below	it.	Check	to	make	sure	the	bar	is	in	the	right	position.
+
+
+===== PAGE 33 =====
+		
+Figure	2-19.
+	Position	of	the	barbell	relative	to	the	scapular	anatomy.	The	bar	is	just	under	the	spine	of	the
+scapula.
+First	 and	 foremost,
+	 ALWAYS	 STEP	 BACK	 OUT	 OF	 THE	 RACK.
+ALWAYS.	NEVER	PUT	THE	BAR	BACK	IN	THE	RACK	BY	STEPPING
+BACKWARDS.	NEVER.	
+This	cannot	be	done	safely.	You	should	never	be	in	a
+position	 to	 have	 to	 step	 backwards	 and	 rack	 a	 weight	 at	 the	 end	 of	 a	 set.	 You
+cannot	 see	 the	 hooks,	 and	 even	 if	 you	have	 spotters,	 there	 will	 eventually	 be	 a
+wreck.	If	you	do	this,	or	permit	it	to	be	done	by	someone	you’re	training,	you	are
+a	fool.
+Take	 the	 bar	 out	 of	 the	 rack	 in	 the	 same	 position	 in	 which	 it	 is	 to	 be
+squatted,	 with	 the	 torso	 and	 shoulders	 tight,	 the	 chest	 and	 elbows	 up,	 the	 head
+position	down,	and	both	feet	under	the	bar.	Everything	should	be	the	same	as	it
+is	for	the	full	squat,	so	take	the	bar	off	of	the	hooks	by	extending	the	knees	and
+hips,	just	as	in	the	top	of	a	squat.	In	this	way,	any	weight	can	be	taken	safely	out
+of	 the	 rack.	 Many	 problems	 are	 caused	 by	 doing	 this	 improperly.	 It	 is	 very
+common	 to	 take	 the	 bar	 out	 of	 the	 rack	 with	 a	 loose	 back	 and	 chest,	 and	 then
+attempt	 to	 tighten	 everything	 just	 before	 squatting.	 It	 is	 obviously	 much	 more
+effective	to	tighten	the	muscles	and	
+then
+	take	the	weight	onto	tight	muscles	than
+it	is	to	take	the	weight,	let	it	mash	down	into	your	back	through	loose	muscles
+until	 it	 stops	 on	 some	 crucial	 skeletal	 component,	 and	 then	 try	 to	 tighten
+everything	up	underneath	it.	
+
+
+===== PAGE 34 =====
+		
+Figure	2-20.
+	Simultaneous	lifting	of	the	elbows	and	the	chest	“trap”	the	bar	between	the	hands	and	the
+back,	creating	a	stable	back	and	chest	position	and	a	tight	bar	placement	on	top	of	the	posterior	delts.
+Likewise,	taking	the	bar	out	with	one	foot	back	and	only	one	foot	under	the	bar,
+like	a	lunge,	is	a	bad	habit,	one	that	everybody	gets	away	with	when	the	weight
+is	light	but	that	can	cause	back	problems	from	the	unevenly	stressed	hips	when
+the	weight	gets	heavier.	Unrack	the	bar	exactly	like	it	is	in	a	squat,	even	when	it
+is	light,	and	you’ll	have	no	problems	later	when	it	is	heavy.	
+	
+	
+Figure	2-21.	
+The	proper	position	in	which	to	receive	the	bar	from	the	rack.
+Once	the	bar	leaves	the	rack,	don’t	take	a	hike	with	it,	backing	up	three
+or	four	steps	before	setting	up	to	squat.	This	is	unnecessary,	and	it	could	become
+a	problem	if	the	set	is	heavy,	the	spotters	are	unreliable,	or	the	trip	back	to	the
+rack	is	just	too	far	on	this	particular	day.	One	step	back	out	of	the	rack	with	good
+
+
+===== PAGE 35 =====
+form	 is	 enough	 to	 clear	 the	 rack	 and	 allow	 the	 spotters	 to	 do	 their	 job	 while
+minimizing	the	trouble	of	getting	the	bar	back	home.
+The	stance	should	be	the	same	as	the	one	used	during	the	stretch.	Again,
+heels	 should	 be	 about	 shoulder	 width	 apart,	 with	 toes	 pointed	 out	 about	 30
+degrees.	
+Most	people	will	change	the	stance	at	this	point,	rotating	the	toes	back
+in.
+	 Make	 sure	 you	 are	 using	 the	 same	 stance	 you	 previously	 used	 during	 the
+unweighted	part	of	this	teaching	method.
+At	 this	 point,	 you	 are	 ready	 to	 squat	 with	 the	 empty	 bar.	 THE	 EMPTY
+BAR.	All	of	the	groundwork	has	been	laid,	the	correct	bottom	position	is	fresh	in
+your	mind,	and	you	are	now	in	the	correct	starting	position.	Everything	you	are
+about	 to	 do	 is	 the	 same	 as	 you	 did	 during	 the	 stretch.	 Only	 two	 things	 are
+different:	one,	you	don’t	have	your	elbows	available	to	help	push	your	knees	out,
+so	you	need	to	do	this	with	your	brain.	And	two,	don’t	stop	at	the	bottom.	Just	go
+down	and	immediately	come	back	up,	driving	your	butt	straight	up,	not	forward,
+out	of	the	bottom.	Now,	take	a	big	breath	and	hold	it,	look	down	at	a	spot	on	the
+floor	about	4–5	feet	in	front	of	you,	and	squat.
+You	should	be	in	good	balance	at	the	bottom	of	the	squat,	having	already
+been	 there	 when	 you	 stretched.	 Your	 weight	 should	 stay	 evenly	 balanced	 over
+the	middle	of	your	feet.	
+Figure	2-22.	
+The	back	angle	during	the	drive	up	from	the	bottom	is	critical	to	the	correct	use	of	the	hips.
+The	correct	angle	is	produced	when	the	bar	is	just	below	the	spine	of	the	scapula	and	directly	over	the
+middle	of	the	foot,	the	back	is	held	tight	in	lumbar	and	thoracic	extension,	the	knees	are	parallel	to	the
+correctly	placed	feet,	and	the	correct	depth	is	reached.	Flopping	forward	allows	the	bar	to	drop	forward	of
+the	midfoot.
+The	 reference	 point	 your	 eyes	 have	 on	 the	 floor	 should	 help	 you	 maintain
+position	all	the	way	down	and	all	the	way	up.	Balance	problems	usually	indicate
+a	 back	 angle	 that	 is	 too	 vertical,	 so	 make	 sure	 you’re	 sitting	 back	 and	 leaning
+
+
+===== PAGE 36 =====
+forward	 enough.	
+Most	people	have	a	picture	in	their	minds	of	a	vertical	torso
+during	the	squat.
+	 Remember	 that	 the	 back	 angle	 will	 not	 be	 vertical	 at	 all;	 sit
+back,	lean	forward,	and	shove	your	knees	out.
+Get	 someone	 to	 verify	 that	 your	 depth	 is	 good,	 and	 DO	 NOT	 accept
+anything	 less	 than	 full	 depth,	 ever,	 from	 this	 point	 on.	 If	 your	 impartial	 critic
+tells	you	that	you’re	high,	check	your	stance	to	make	sure	that	it’s	wide	enough
+but	not	too	wide,	that	your	toes	are	out	enough,	and	that	your	knees	are	tracking
+parallel	to	your	feet.	While	he’s	being	helpful,	get	him	to	check	your	eye	gaze
+direction	and	to	remind	you	to	look	down	every	rep.	If	you’re	sure	the	form	is
+fairly	good,	do	a	set	of	five	and	rack	the	bar.	If	the	form	is	good	except	for	the
+depth,	 the	 squat	 itself	 will	 act	 as	 a	 stretch	 IF	 YOUR	 KNEES	 ARE	 OUT.	 And
+most	 of	 the	 time,	 if	 you	 are	 high,	 it	 is	 because	 your	 knees	 are	 not	 out.	
+Most
+people	who	have	problems	with	the	squat	–	at	this	rank	novice	level	as	well	as
+later	on	–	do	not	shove	their	knees	out	enough.
+	If	the	squat	is	crazy	bad,	rack	the
+bar	and	repeat	the	pre-squat	procedure,	focusing	on	the	knees-out	part.
+To	 rack	 the	 bar	 safely	 and	 easily,	 walk	 forward	 until	 it	 touches	 the
+vertical	 parts	 of	 the	 rack.	 Find	 the	 uprights,	 not	 the	 hooks.	 You	 can’t	 miss	 the
+uprights,	and	if	you	touch	them,	you’ll	be	over	the	hooks.	If	you	try	to	set	the	bar
+directly	down	on	the	hooks,	you	can	and	will	eventually	miss	it	on	one	side.	Big
+wreck.
+The	general	plan	is	to	do	a	couple	more	sets	of	five	reps	with	the	empty
+bar	to	nail	down	the	form,	and	then	add	weight,	do	another	set	of	five,	and	keep
+increasing	 in	 even	 increments	 until	 the	 next	 increase	 would	 compromise	 the
+form.	 Sets	 of	 five	 are	 a	 good	 number	 to	 learn	 with	 –	 not	 so	 many	 that	 fatigue
+affects	 form	 during	 the	 last	 reps,	 but	 enough	 to	 establish	 and	 practice	 the
+technique	while	handling	enough	weight	to	get	strong.	Increments	for	increasing
+the	 weight	 between	 sets	 will	 vary	 with	 the	 trainee.	 Lightweight,	 unconditioned
+kids	need	to	go	up	in	10–15	lb	or	5–7.5	kg	jumps.	Older	or	stronger	trainees	can
+use	 20–30	 lb	 or	 10–15	 kg	 increments.	 Decide	 which	 jumps	 best	 fit	 your
+situation,	 being	 conservative	 since	 it	 is	 your	 first	 day.	
+Most	people	will	try	to
+increase	the	weight	by	increments	that	are	too	large	for	this	point	in	the	teaching
+method.
+	Go	on	up	in	weight,	practicing	good	form	and	making	sure	to	keep	good
+depth,	until	you	can	tell	that	the	next	jump	up	would	alter	your	form.	Then	do
+two	 more	 sets	 at	 the	 current	 weight,	 for	 a	 total	 of	 three	 sets	 across	 with	 the
+heaviest	weight.	And	that	is	the	first	squat	workout.
+
+
+===== PAGE 37 =====
+	
+	
+	
+	
+	
+	
+	
+	
+Figure	2-23.	
+The	squat.
+
+
+===== PAGE 38 =====
+The	Important	Things	You’re	Going	to	Do	Wrong
+	
+Depth:	
+You’re	 probably	 going	 to	 squat	 to	 a	 position	 above	 parallel.	 This	 will
+occur	because	you’re	not	looking	down,	you’re	not	shoving	your	knees	out,	you
+have	a	stance	that	is	either	too	narrow	or	too	wide,	or	you	have	not	committed	to
+going	deep.
+Knee	position:	
+You	will	fail	to	shove	your	knees	out	as	you	start	down.	This	will
+make	correct	depth	hard	to	attain	and	will	kill	your	hip	drive.
+Stance:	
+Your	stance	will	be	either	too	narrow	or	too	wide,	with	your	toes	usually
+pointed	too	forward.	This	will	result	in	a	squat	that	is	not	below	parallel.
+Eye	gaze:	
+You	will	fail	to	look	down.	This	will	kill	your	hip	drive.
+Back	 angle:
+	 Your	 back	 will	 (usually)	 be	 too	 vertical,	 due	 to	 a	 faulty	 mental
+picture	of	what	your	hips	do	when	you	squat	or	due	to	the	incorrect	placement	of
+the	bar	on	your	back,	or	your	back	will	be	too	horizontal,	due	to	your	failure	to
+keep	your	chest	up.	Either	error	will	adversely	affect	hip	drive	and	depth.
+Hip	drive:	
+You	will	lift	your	chest	instead	of	driving	your	hips	up.	This	will	kill
+your	power	out	of	the	bottom	by	making	your	back	angle	too	vertical.
+Bar	 placement:	
+You	 will	 place	 the	 bar	 too	 high	 on	 your	 back.	 This	 will
+adversely	affect	your	back	angle	and	your	hip	drive.
+Rack	height:	
+You	will	set	the	bar	in	the	rack	in	a	position	that	is	too	high.	This
+will	make	the	preferred	position	on	the	back	difficult	to	attain.
+Notice	that	all	of	these	problems	are	extremely	interrelated.	The	squat	is
+a	 complex,	 multi-joint	 exercise	 whose	 correct	 execution	 depends	 on	 all	 the
+components	of	the	entire	system	functioning	together.	An	incorrect	placement	of
+any	 component	 will	 perturb	 the	 entire	 system	 to	 its	 detriment.	 A	 working
+knowledge	of	the	functional	mechanics	of	the	system	is	important	if	you	are	to
+understand	the	contribution	of	each	component	to	the	system,	and	the	workings
+of	the	system	as	a	whole.
+	

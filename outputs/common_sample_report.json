@@ -1,0 +1,727 @@
+{
+  "source_file": "common_sample.mp4",
+  "fps": 30.0,
+  "frame_count": 236,
+  "duration_s": 7.867,
+  "video_w": 608,
+  "video_h": 1080,
+  "reps_detected": 2,
+  "viewpoint": {
+    "view": "side_view",
+    "reason": "consistent with a side-on recording",
+    "evidence": {
+      "median_ankle_separation_px": 10.0,
+      "median_shoulder_separation_px": 29.0,
+      "median_torso_length_px": 182.6,
+      "median_foot_line_tilt_deg": 21.8,
+      "ankle_separation_over_torso": 0.055,
+      "shoulder_separation_over_torso": 0.159
+    },
+    "note": null
+  },
+  "camera_roll_deg": -21.8,
+  "camera_roll_uncertainty_deg": 13.03,
+  "reps": [
+    {
+      "rep_id": 1,
+      "start_frame": 13,
+      "bottom_frame": 61,
+      "end_frame": 108,
+      "start_timestamp_s": 0.433,
+      "bottom_timestamp_s": 2.033,
+      "end_timestamp_s": 3.6,
+      "duration_frames": 96,
+      "measurements": {
+        "rep_frames": 96,
+        "depth_px": 43.96,
+        "depth_px_raw_hip_joint": 21.35,
+        "depth_roll_sensitivity_px": 24.79,
+        "depth_px_range": [
+          19.16,
+          68.75
+        ],
+        "depth_uncertainty_px": 8.0,
+        "torso_length_px": 141.32,
+        "back_angle_deg": 80.69441106807984,
+        "back_angle_top_deg": 73.08552481076858,
+        "hip_angle_deg": 69.7054072553352,
+        "knee_angle_deg": 66.67968386617464,
+        "head_pitch_deg": 58.74044303890962,
+        "bar_drift_samples": 96,
+        "bar_drift_from_midfoot_px": 203.76,
+        "bar_drift_range_px": [
+          92.8,
+          315.9
+        ],
+        "bar_height_vs_shoulder_px": -65.36,
+        "knee_forward_of_toe_px": -31.74,
+        "hip_behind_ankle_px": 86.71,
+        "hip_drive_ratio": 5.704,
+        "camera_roll_deg": -21.8,
+        "lifter_faces": "left",
+        "global_uncertainty": [],
+        "occlusion": {
+          "shoulder": true,
+          "head": false,
+          "hip": false,
+          "knee": false,
+          "ankle": false,
+          "bar": false
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "DEPTH-01",
+          "rule": "Full depth \u2014 hip below top of patella",
+          "source_pages": [
+            2,
+            16,
+            33,
+            35
+          ],
+          "source_section": "p2, p16, p33, p35",
+          "source_quote": "Correctly is deep, with hips dropping below level with the top of the patellas",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": {
+            "depth_px": 43.96
+          },
+          "status": "meets standard",
+          "feedback": "Reached full depth: the hip crease apex was 44 px below the top of the patella at the bottom of the rep (reference p2).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "ANGLE-01",
+          "rule": "Back angle \u2014 torso inclined, not vertical",
+          "source_pages": [
+            9,
+            22,
+            33,
+            35
+          ],
+          "source_section": "p9, p22, p33, p35",
+          "source_quote": "the back is at an angle (about 45 degrees) that will place the bar over the middle of the foot",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked position is a model estimate rather than an observation. Torso landmarks were not available, or the torso was occluded so the shoulder-hip vector could not be measured reliably.",
+          "uncertainty": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+        },
+        {
+          "rule_id": "ANGLE-02",
+          "rule": "Hip and knee angles (diagnostic, observation only)",
+          "source_pages": [
+            9,
+            16
+          ],
+          "source_section": "p9, p16",
+          "source_quote": "The hip angle is formed by the plane of the torso and the femur. The knee angle is formed by the femur and the tibia",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked position is a model estimate rather than an observation. Landmarks required to form the hip or knee angle were not available.",
+          "uncertainty": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+        },
+        {
+          "rule_id": "BAR-01",
+          "rule": "Bar path \u2014 bar stays over the midfoot",
+          "source_pages": [
+            8,
+            9,
+            11,
+            33
+          ],
+          "source_section": "p8, p9, p11, p33",
+          "source_quote": "good technique in barbell training is easily and understandably defined as the ability of the lifter to keep the bar vertically aligned with the balance point",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": {
+            "bar_drift_from_midfoot_px": 203.76,
+            "bar_drift_samples": 96,
+            "bar_drift_range_px": [
+              92.8,
+              315.9
+            ]
+          },
+          "status": "does not meet standard",
+          "feedback": "Bar drifted 204 px horizontally from the midfoot, measured on 96 of 96 frames (the plausible range of that figure is 93 to 316 px, because the bar and the midfoot are far apart vertically). The document states that any horizontal component of bar motion is not work against gravity (reference p11) and that flopping forward lets the bar drop forward of the midfoot (reference p33).",
+          "uncertainty": "Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; the document states the criterion qualitatively (reference p8, p9, p11, p33)."
+        },
+        {
+          "rule_id": "BAR-02",
+          "rule": "Bar placement \u2014 low bar, just below the scapular spine",
+          "source_pages": [
+            13,
+            29,
+            30
+          ],
+          "source_section": "p13, p29, p30",
+          "source_quote": "The bar should therefore be in the lowest secure position it can occupy on the back, right below the spine of the scapula",
+          "assessable": false,
+          "assessability": "partial",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked position is a model estimate rather than an observation. The bar could not be located relative to the shoulders in this recording.",
+          "uncertainty": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+        },
+        {
+          "rule_id": "HIP-01",
+          "rule": "Hip drive \u2014 hips go up, not forward",
+          "source_pages": [
+            23,
+            35
+          ],
+          "source_section": "p23, p35",
+          "source_quote": "come up out of the bottom by driving your butt straight up in the air. Up, not forward.",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": {
+            "hip_drive_ratio": 5.7
+          },
+          "status": "meets standard",
+          "feedback": "Hips drove up out of the bottom rather than forward, matching the document's 'up, not forward' instruction (reference p23).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "KNEE-01",
+          "rule": "Knee position \u2014 knees just forward of the toes",
+          "source_pages": [
+            22,
+            33,
+            35
+          ],
+          "source_section": "p22, p33, p35",
+          "source_quote": "the knees are just a little forward of the toes",
+          "assessable": false,
+          "assessability": "partial",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": {
+            "knee_forward_of_toe_px": -31.74
+          },
+          "status": "does not meet standard",
+          "feedback": "Knees sit 32 px behind the toe line. The document's bottom position has the knees just a little forward of the toes with the hips back (reference p22).",
+          "uncertainty": "Threshold {'min_px': -10, 'max_px': 120} is an application assumption; the document states the criterion qualitatively (reference p22, p33, p35)."
+        },
+        {
+          "rule_id": "HIP-02",
+          "rule": "Hips back at the bottom",
+          "source_pages": [
+            22
+          ],
+          "source_section": "p22",
+          "source_quote": "the hips are back",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": {
+            "hip_behind_ankle_px": 86.71
+          },
+          "status": "meets standard",
+          "feedback": "Hips are back over the heels at the bottom, as the document's bottom position describes (reference p22).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "EYE-01",
+          "rule": "Eye gaze down",
+          "source_pages": [
+            24,
+            26,
+            35
+          ],
+          "source_section": "p24, p26, p35",
+          "source_quote": "look down at a point on the floor 4-5 feet in front of you",
+          "assessable": false,
+          "assessability": "partial",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": {
+            "head_pitch_deg": 58.74
+          },
+          "status": "meets standard",
+          "feedback": "Head is pitched down 59 degrees, consistent with the document's chin-down position of looking at a point on the floor 4-5 feet in front of you (reference p24).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "STANCE-01",
+          "rule": "Stance width \u2014 heels about shoulder width",
+          "source_pages": [
+            13,
+            19,
+            33,
+            35
+          ],
+          "source_section": "p13, p19, p33, p35",
+          "source_quote": "heels about shoulder width apart",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Stance width is not observable in a side view; a front or rear view is required.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "STANCE-02",
+          "rule": "Toe angle \u2014 about 30 degrees out",
+          "source_pages": [
+            13,
+            19,
+            33,
+            35
+          ],
+          "source_section": "p13, p19, p33, p35",
+          "source_quote": "toes pointed out at about 30 degrees",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Toe angle is not observable in a side view; a front or rear view is required.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "KNEE-02",
+          "rule": "Knees tracking parallel to the feet (no valgus)",
+          "source_pages": [
+            13,
+            33,
+            35
+          ],
+          "source_section": "p13, p33, p35",
+          "source_quote": "the knees are shoved out so that the thighs stay parallel to the feet",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Medial-lateral knee position is not observable in a side view; a front or rear view is required.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "GRIP-01",
+          "rule": "Grip width and wrist alignment",
+          "source_pages": [
+            28,
+            29
+          ],
+          "source_section": "p28, p29",
+          "source_quote": "16-17 inches between the ends of the outside knurl, and 32 inches between the finger marks",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Grip width and wrist alignment are not reliably observable in a side view.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "RACK-01",
+          "rule": "Rack height at mid-sternum",
+          "source_pages": [
+            27
+          ],
+          "source_section": "p27",
+          "source_quote": "Set the rack height so that the bar in the rack is at about the level of your mid-sternum",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 61,
+          "timestamp_s": 2.033,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Rack height is a setup measurement, not observable during the squat itself.",
+          "uncertainty": "Requires a front or rear view."
+        }
+      ],
+      "overall": "does not meet standard",
+      "uncertainty_notes": [
+        "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess.",
+        "Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; the document states the criterion qualitatively (reference p8, p9, p11, p33).",
+        "Threshold {'min_px': -10, 'max_px': 120} is an application assumption; the document states the criterion qualitatively (reference p22, p33, p35).",
+        "Requires a front or rear view."
+      ]
+    },
+    {
+      "rep_id": 2,
+      "start_frame": 125,
+      "bottom_frame": 188,
+      "end_frame": 231,
+      "start_timestamp_s": 4.167,
+      "bottom_timestamp_s": 6.267,
+      "end_timestamp_s": 7.7,
+      "duration_frames": 107,
+      "measurements": {
+        "rep_frames": 107,
+        "depth_px": 44.32,
+        "depth_px_raw_hip_joint": 21.16,
+        "depth_roll_sensitivity_px": 24.08,
+        "depth_px_range": [
+          20.24,
+          68.4
+        ],
+        "depth_uncertainty_px": 8.0,
+        "torso_length_px": 144.75,
+        "back_angle_deg": 81.51230640366222,
+        "back_angle_top_deg": 73.88513386479056,
+        "hip_angle_deg": 70.30239296883491,
+        "knee_angle_deg": 68.63734987190395,
+        "head_pitch_deg": 27.016840081225588,
+        "bar_drift_samples": 107,
+        "bar_drift_from_midfoot_px": 206.27,
+        "bar_drift_range_px": [
+          96.3,
+          320.2
+        ],
+        "bar_height_vs_shoulder_px": -59.79,
+        "knee_forward_of_toe_px": -36.94,
+        "hip_behind_ankle_px": 87.46,
+        "hip_drive_ratio": 5.08,
+        "camera_roll_deg": -21.8,
+        "lifter_faces": "left",
+        "global_uncertainty": [],
+        "occlusion": {
+          "shoulder": true,
+          "head": false,
+          "hip": false,
+          "knee": false,
+          "ankle": false,
+          "bar": false
+        }
+      },
+      "findings": [
+        {
+          "rule_id": "DEPTH-01",
+          "rule": "Full depth \u2014 hip below top of patella",
+          "source_pages": [
+            2,
+            16,
+            33,
+            35
+          ],
+          "source_section": "p2, p16, p33, p35",
+          "source_quote": "Correctly is deep, with hips dropping below level with the top of the patellas",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": {
+            "depth_px": 44.32
+          },
+          "status": "meets standard",
+          "feedback": "Reached full depth: the hip crease apex was 44 px below the top of the patella at the bottom of the rep (reference p2).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "ANGLE-01",
+          "rule": "Back angle \u2014 torso inclined, not vertical",
+          "source_pages": [
+            9,
+            22,
+            33,
+            35
+          ],
+          "source_section": "p9, p22, p33, p35",
+          "source_quote": "the back is at an angle (about 45 degrees) that will place the bar over the middle of the foot",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked position is a model estimate rather than an observation. Torso landmarks were not available, or the torso was occluded so the shoulder-hip vector could not be measured reliably.",
+          "uncertainty": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+        },
+        {
+          "rule_id": "ANGLE-02",
+          "rule": "Hip and knee angles (diagnostic, observation only)",
+          "source_pages": [
+            9,
+            16
+          ],
+          "source_section": "p9, p16",
+          "source_quote": "The hip angle is formed by the plane of the torso and the femur. The knee angle is formed by the femur and the tibia",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked position is a model estimate rather than an observation. Landmarks required to form the hip or knee angle were not available.",
+          "uncertainty": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+        },
+        {
+          "rule_id": "BAR-01",
+          "rule": "Bar path \u2014 bar stays over the midfoot",
+          "source_pages": [
+            8,
+            9,
+            11,
+            33
+          ],
+          "source_section": "p8, p9, p11, p33",
+          "source_quote": "good technique in barbell training is easily and understandably defined as the ability of the lifter to keep the bar vertically aligned with the balance point",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": {
+            "bar_drift_from_midfoot_px": 206.27,
+            "bar_drift_samples": 107,
+            "bar_drift_range_px": [
+              96.3,
+              320.2
+            ]
+          },
+          "status": "does not meet standard",
+          "feedback": "Bar drifted 206 px horizontally from the midfoot, measured on 107 of 107 frames (the plausible range of that figure is 96 to 320 px, because the bar and the midfoot are far apart vertically). The document states that any horizontal component of bar motion is not work against gravity (reference p11) and that flopping forward lets the bar drop forward of the midfoot (reference p33).",
+          "uncertainty": "Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; the document states the criterion qualitatively (reference p8, p9, p11, p33)."
+        },
+        {
+          "rule_id": "BAR-02",
+          "rule": "Bar placement \u2014 low bar, just below the scapular spine",
+          "source_pages": [
+            13,
+            29,
+            30
+          ],
+          "source_section": "p13, p29, p30",
+          "source_quote": "The bar should therefore be in the lowest secure position it can occupy on the back, right below the spine of the scapula",
+          "assessable": false,
+          "assessability": "partial",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked position is a model estimate rather than an observation. The bar could not be located relative to the shoulders in this recording.",
+          "uncertainty": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+        },
+        {
+          "rule_id": "HIP-01",
+          "rule": "Hip drive \u2014 hips go up, not forward",
+          "source_pages": [
+            23,
+            35
+          ],
+          "source_section": "p23, p35",
+          "source_quote": "come up out of the bottom by driving your butt straight up in the air. Up, not forward.",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": {
+            "hip_drive_ratio": 5.08
+          },
+          "status": "meets standard",
+          "feedback": "Hips drove up out of the bottom rather than forward, matching the document's 'up, not forward' instruction (reference p23).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "KNEE-01",
+          "rule": "Knee position \u2014 knees just forward of the toes",
+          "source_pages": [
+            22,
+            33,
+            35
+          ],
+          "source_section": "p22, p33, p35",
+          "source_quote": "the knees are just a little forward of the toes",
+          "assessable": false,
+          "assessability": "partial",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": {
+            "knee_forward_of_toe_px": -36.94
+          },
+          "status": "does not meet standard",
+          "feedback": "Knees sit 37 px behind the toe line. The document's bottom position has the knees just a little forward of the toes with the hips back (reference p22).",
+          "uncertainty": "Threshold {'min_px': -10, 'max_px': 120} is an application assumption; the document states the criterion qualitatively (reference p22, p33, p35)."
+        },
+        {
+          "rule_id": "HIP-02",
+          "rule": "Hips back at the bottom",
+          "source_pages": [
+            22
+          ],
+          "source_section": "p22",
+          "source_quote": "the hips are back",
+          "assessable": true,
+          "assessability": "yes",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": {
+            "hip_behind_ankle_px": 87.46
+          },
+          "status": "meets standard",
+          "feedback": "Hips are back over the heels at the bottom, as the document's bottom position describes (reference p22).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "EYE-01",
+          "rule": "Eye gaze down",
+          "source_pages": [
+            24,
+            26,
+            35
+          ],
+          "source_section": "p24, p26, p35",
+          "source_quote": "look down at a point on the floor 4-5 feet in front of you",
+          "assessable": false,
+          "assessability": "partial",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": {
+            "head_pitch_deg": 27.02
+          },
+          "status": "meets standard",
+          "feedback": "Head is pitched down 27 degrees, consistent with the document's chin-down position of looking at a point on the floor 4-5 feet in front of you (reference p24).",
+          "uncertainty": null
+        },
+        {
+          "rule_id": "STANCE-01",
+          "rule": "Stance width \u2014 heels about shoulder width",
+          "source_pages": [
+            13,
+            19,
+            33,
+            35
+          ],
+          "source_section": "p13, p19, p33, p35",
+          "source_quote": "heels about shoulder width apart",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Stance width is not observable in a side view; a front or rear view is required.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "STANCE-02",
+          "rule": "Toe angle \u2014 about 30 degrees out",
+          "source_pages": [
+            13,
+            19,
+            33,
+            35
+          ],
+          "source_section": "p13, p19, p33, p35",
+          "source_quote": "toes pointed out at about 30 degrees",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Toe angle is not observable in a side view; a front or rear view is required.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "KNEE-02",
+          "rule": "Knees tracking parallel to the feet (no valgus)",
+          "source_pages": [
+            13,
+            33,
+            35
+          ],
+          "source_section": "p13, p33, p35",
+          "source_quote": "the knees are shoved out so that the thighs stay parallel to the feet",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Medial-lateral knee position is not observable in a side view; a front or rear view is required.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "GRIP-01",
+          "rule": "Grip width and wrist alignment",
+          "source_pages": [
+            28,
+            29
+          ],
+          "source_section": "p28, p29",
+          "source_quote": "16-17 inches between the ends of the outside knurl, and 32 inches between the finger marks",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Grip width and wrist alignment are not reliably observable in a side view.",
+          "uncertainty": "Requires a front or rear view."
+        },
+        {
+          "rule_id": "RACK-01",
+          "rule": "Rack height at mid-sternum",
+          "source_pages": [
+            27
+          ],
+          "source_section": "p27",
+          "source_quote": "Set the rack height so that the bar in the rack is at about the level of your mid-sternum",
+          "assessable": false,
+          "assessability": "no",
+          "frame": 188,
+          "timestamp_s": 6.267,
+          "measurement": null,
+          "status": "cannot assess",
+          "feedback": "Rack height is a setup measurement, not observable during the squat itself.",
+          "uncertainty": "Requires a front or rear view."
+        }
+      ],
+      "overall": "does not meet standard",
+      "uncertainty_notes": [
+        "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess.",
+        "Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; the document states the criterion qualitatively (reference p8, p9, p11, p33).",
+        "Threshold {'min_px': -10, 'max_px': 120} is an application assumption; the document states the criterion qualitatively (reference p22, p33, p35).",
+        "Requires a front or rear view."
+      ]
+    }
+  ],
+  "skill": {
+    "skill_id": "low-bar-squat-standards",
+    "version": "2.0.0",
+    "title": "Low-Bar Back Squat Technique Standards",
+    "source": {
+      "document": "Document_for_skill.pdf (appended to AI_Engineer_Hiring_Assignment.pdf)",
+      "citation_scheme": "Reference pages 1-35. Reference page N == combined PDF page N+3.",
+      "page_offset": 3,
+      "note": "Every rule below cites the reference pages it is derived from. Thresholds marked threshold_source=assumption are engineering assumptions made by this application, NOT requirements stated in the document, and are surfaced as such in the output."
+    },
+    "rules_evaluated": 14
+  },
+  "annotated_video": "common_sample_annotated.mp4",
+  "annotated_video_info": {
+    "file": "common_sample_annotated.mp4",
+    "bytes": 729432,
+    "browser_playable": true,
+    "format": "H.264 MP4 with faststart"
+  },
+  "notes": [
+    "Every finding cites the reference pages of the supplied document (reference page N == combined PDF page N+3).",
+    "Thresholds marked threshold_source=assumption are application engineering assumptions, not document requirements.",
+    "Criteria the document requires but a side view cannot reveal are returned as 'cannot assess'.",
+    "Depth is measured from the estimated crease apex (document landmark B) against the top of the patella (landmark A) in a gravity-aligned frame; the crease offset is an application assumption."
+  ]
+}

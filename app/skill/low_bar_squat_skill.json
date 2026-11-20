@@ -1,0 +1,469 @@
+{
+  "skill_id": "low-bar-squat-standards",
+  "version": "2.0.0",
+  "title": "Low-Bar Back Squat Technique Standards",
+  "source": {
+    "document": "Document_for_skill.pdf (appended to AI_Engineer_Hiring_Assignment.pdf)",
+    "citation_scheme": "Reference pages 1-35. Reference page N == combined PDF page N+3.",
+    "page_offset": 3,
+    "note": "Every rule below cites the reference pages it is derived from. Thresholds marked threshold_source=assumption are engineering assumptions made by this application, NOT requirements stated in the document, and are surfaced as such in the output."
+  },
+  "definitions": {
+    "back_angle": {
+      "definition": "The angle formed by the plane of the torso and the floor (assumed horizontal).",
+      "source_pages": [
+        9,
+        22,
+        33
+      ],
+      "quote": "The back angle is formed by the plane of the torso and the floor, which is assumed to be horizontal",
+      "measured": "angle of the shoulder->hip vector against the estimated floor line"
+    },
+    "hip_angle": {
+      "definition": "The angle formed by the plane of the torso and the femur.",
+      "source_pages": [
+        9
+      ],
+      "quote": "The hip angle is formed by the plane of the torso and the femur."
+    },
+    "knee_angle": {
+      "definition": "The angle formed by the femur and the tibia.",
+      "source_pages": [
+        9
+      ],
+      "quote": "The knee angle is formed by the femur and the tibia"
+    },
+    "depth_landmark_a": {
+      "definition": "The top of the patella.",
+      "source_pages": [
+        2
+      ],
+      "quote": "The top of the patella (A)"
+    },
+    "depth_landmark_b": {
+      "definition": "The hip joint, identified by the apex in the crease of the shorts.",
+      "source_pages": [
+        2
+      ],
+      "quote": "the hip joint, as identified by the apex in the crease of the shorts (B)"
+    },
+    "midfoot": {
+      "definition": "The point on the sole of the foot halfway between the heel and the toe. The lifter/barbell system is in balance when the bar is directly over the midfoot.",
+      "source_pages": [
+        8,
+        9,
+        11,
+        33
+      ],
+      "quote": "the midfoot is exactly halfway between either end of the sole of the shoe"
+    },
+    "floor": {
+      "definition": "The horizontal plane the lifter stands on. The document assumes the floor is horizontal when defining the back angle, so a tilted camera must be corrected for before the back angle can be measured.",
+      "source_pages": [
+        9,
+        22,
+        33
+      ]
+    }
+  },
+  "rules": [
+    {
+      "id": "DEPTH-01",
+      "name": "Full depth — hip below top of patella",
+      "category": "depth",
+      "source_pages": [
+        2,
+        16,
+        33,
+        35
+      ],
+      "quote": "Correctly is deep, with hips dropping below level with the top of the patellas",
+      "criterion": "At the bottom of the repetition, depth landmark B (hip joint) must be lower than depth landmark A (top of patella).",
+      "assessable": "yes",
+      "measure": "depth_px",
+      "thresholds": {
+        "tolerance_px": 8
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The document states the rule as binary (below parallel) and gives no tolerance. 8 px absorbs landmark jitter at the ~600-1000 px body height typical of a side-view recording; it is NOT a document requirement.",
+      "feedback_meets": "Reached full depth: the hip dropped below the top of the patella at the bottom of the rep.",
+      "feedback_fails": "Did not reach full depth: the hip stayed above the top of the patella at the bottom of the rep. The document treats anything short of this as a partial squat (reference p16), which stresses the knees and quadriceps without loading the hamstrings, adductors and glutes.",
+      "cannot_assess_reason": "Pose landmarks for the hip or knee were not available at the bottom of the rep, so depth could not be measured.",
+      "requires_landmarks": [
+        "hip",
+        "knee"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "ANGLE-01",
+      "name": "Back angle — torso inclined, not vertical",
+      "category": "torso",
+      "source_pages": [
+        9,
+        22,
+        33,
+        35
+      ],
+      "quote": "the back is at an angle (about 45 degrees) that will place the bar over the middle of the foot",
+      "criterion": "The back angle (torso plane against the floor) should be roughly 45 degrees at the bottom of the rep — inclined, not vertical.",
+      "assessable": "yes",
+      "measure": "back_angle_deg",
+      "thresholds": {
+        "reference_deg": 45,
+        "tolerance_deg": 15
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The reference value of 45 degrees is taken directly from the document (reference p22). The +/-15 degree tolerance band is an engineering assumption, not a document requirement.",
+      "feedback_meets": "Back angle of {measured} degrees is consistent with the inclined torso the document describes for the low-bar squat.",
+      "feedback_fails": "Back angle of {measured} degrees is {direction}. The document expects an inclined back of about 45 degrees; a vertical back is the most common error and it kills hip drive.",
+      "cannot_assess_reason": "Torso landmarks were not available, or the torso was occluded so the shoulder-hip vector could not be measured reliably.",
+      "requires_landmarks": [
+        "shoulder",
+        "hip"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "ANGLE-02",
+      "name": "Hip and knee angles (diagnostic, observation only)",
+      "category": "torso",
+      "source_pages": [
+        9,
+        16
+      ],
+      "quote": "The hip angle is formed by the plane of the torso and the femur. The knee angle is formed by the femur and the tibia",
+      "criterion": "The document defines the hip angle and knee angle as diagnostic measures of the squat but states no pass/fail threshold for either. These are reported as observations.",
+      "assessable": "yes",
+      "measure": "hip_angle_deg,knee_angle_deg",
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "No document threshold exists for these angles, so no meets/does-not-meet verdict is produced. Reporting a verdict here would be an unsupported rule.",
+      "observation_only": true,
+      "feedback_meets": "Hip angle {hip_angle_deg} degrees, knee angle {knee_angle_deg} degrees at the bottom of the rep.",
+      "feedback_fails": "Hip angle {hip_angle_deg} degrees, knee angle {knee_angle_deg} degrees at the bottom of the rep.",
+      "cannot_assess_reason": "Landmarks required to form the hip or knee angle were not available.",
+      "requires_landmarks": [
+        "shoulder",
+        "hip",
+        "knee"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "BAR-01",
+      "name": "Bar path — bar stays over the midfoot",
+      "category": "bar_path",
+      "source_pages": [
+        8,
+        9,
+        11,
+        33
+      ],
+      "quote": "good technique in barbell training is easily and understandably defined as the ability of the lifter to keep the bar vertically aligned with the balance point",
+      "criterion": "Throughout the repetition the barbell should remain horizontally over the midfoot balance point, so that horizontal bar motion does no work against gravity.",
+      "assessable": "yes",
+      "measure": "bar_drift_from_midfoot_px,bar_drift_samples,bar_drift_range_px",
+      "thresholds": {
+        "tolerance_px": 25,
+        "min_samples": 3,
+        "min_sample_fraction": 0.2
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The document requires the bar to be directly over the midfoot through the complete range of motion (reference p14) but gives no numeric tolerance. 25 px is an engineering assumption reflecting typical landmark jitter, and is NOT a document requirement. min_sample_fraction is the share of the repetition's frames in which both the bar and the midfoot must be locatable for the measurement to support a verdict at all - a verdict resting on one or two frames is not evidence. The reported figure also carries the range it takes across the camera-roll uncertainty band.",
+      "feedback_meets": "Bar path stayed over the midfoot balance point (maximum horizontal deviation {measured} px).",
+      "feedback_fails": "Bar drifted {measured} px horizontally from the midfoot. The document states that any horizontal component of bar motion is not work against gravity, and that flopping forward lets the bar drop forward of the midfoot (reference p33).",
+      "cannot_assess_reason": "The bar position or the midfoot reference point could not be determined from this recording.",
+      "requires_landmarks": [
+        "bar"
+      ],
+      "occlusion_note": "If the bar proxy is hidden by a large object in the frame (for example a weight plate) the bar path is a model guess rather than an observation, and the rule is reported as cannot assess."
+    },
+    {
+      "id": "BAR-02",
+      "name": "Bar placement — low bar, just below the scapular spine",
+      "category": "bar_path",
+      "source_pages": [
+        13,
+        29,
+        30
+      ],
+      "quote": "The bar should therefore be in the lowest secure position it can occupy on the back, right below the spine of the scapula",
+      "criterion": "The bar rests on the posterior deltoids, just below the spine of the scapula, not high on the traps.",
+      "assessable": "partial",
+      "measure": "bar_height_vs_shoulder_px",
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "The document criterion is anatomical (just below the scapular spine). A side view cannot confirm the exact contact point on the back, so this rule can only ever be partially assessed.",
+      "feedback_meets": "Bar height is consistent with the low-bar position on the posterior deltoids. This is an estimate: confirming the exact contact point below the scapular spine requires a rear view.",
+      "feedback_fails": "Bar appears higher than the low-bar position described in the document.",
+      "cannot_assess_reason": "The bar could not be located relative to the shoulders in this recording.",
+      "requires_landmarks": [
+        "bar",
+        "shoulder"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "HIP-01",
+      "name": "Hip drive — hips go up, not forward",
+      "category": "hip_drive",
+      "source_pages": [
+        23,
+        35
+      ],
+      "quote": "come up out of the bottom by driving your butt straight up in the air. Up, not forward.",
+      "criterion": "During the ascent the hips should rise more than they travel forward.",
+      "assessable": "yes",
+      "measure": "hip_drive_ratio",
+      "thresholds": {
+        "min_ratio": 1.0
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The document requires 'up, not forward' but gives no numeric ratio. A ratio of 1.0 (as much vertical as horizontal hip travel) is an engineering assumption, not a document requirement.",
+      "feedback_meets": "Hips drove up and back rather than forward out of the bottom, matching the document's 'up, not forward' instruction.",
+      "feedback_fails": "Hips travelled forward as much as they travelled up out of the bottom. The document is explicit that the lifter must come up out of the bottom driving the hips straight up, not forward, and that lifting the chest instead of driving the hips kills power out of the bottom.",
+      "cannot_assess_reason": "Hip trajectory during the ascent could not be measured.",
+      "requires_landmarks": [
+        "hip"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "KNEE-01",
+      "name": "Knee position — knees just forward of the toes",
+      "category": "knee",
+      "source_pages": [
+        22,
+        33,
+        35
+      ],
+      "quote": "the knees are just a little forward of the toes",
+      "criterion": "At the bottom of the rep the knee should be forward of the toe line by a small amount, and the hips should be back. The sagittal (forward/back) component is assessable; the knees-tracking-parallel-to-the-feet component is not.",
+      "assessable": "partial",
+      "measure": "knee_forward_of_toe_px",
+      "thresholds": {
+        "min_px": -10,
+        "max_px": 120
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The document describes the knees as just a little forward of the toes but gives no measurement. The -10 px lower bound allows for knee and toe landmark noise and the 120 px upper bound is sized against typical shin length. Both are engineering assumptions, not document requirements.",
+      "feedback_meets": "Knees are forward of the toes by {measured} px, consistent with the bottom position the document describes.",
+      "feedback_fails": "Knees sit {measured} px relative to the toe line. The document expects the knees just a little forward of the toes with the hips back.",
+      "cannot_assess_reason": "Knee or toe landmarks were not available, so knee position relative to the toes could not be measured.",
+      "requires_landmarks": [
+        "knee",
+        "toe"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "HIP-02",
+      "name": "Hips back at the bottom",
+      "category": "knee",
+      "source_pages": [
+        22
+      ],
+      "quote": "the hips are back",
+      "criterion": "At the bottom of the rep the hip should sit behind the ankle line, shifting load to the posterior chain rather than the knees.",
+      "assessable": "yes",
+      "measure": "hip_behind_ankle_px",
+      "thresholds": {
+        "min_px": -10
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The document states the hips are back at the bottom without giving a measurement. The -10 px bound allows for hip and ankle landmark noise and is an engineering assumption, not a document requirement.",
+      "feedback_meets": "Hips are back over the heels at the bottom, as the document's bottom position describes.",
+      "feedback_fails": "Hips are not back behind the ankles at the bottom. The document's bottom position has the hips back with the knees just a little forward of the toes.",
+      "cannot_assess_reason": "Hip or ankle landmarks were not available at the bottom of the rep.",
+      "requires_landmarks": [
+        "hip",
+        "ankle"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "EYE-01",
+      "name": "Eye gaze down",
+      "category": "gaze",
+      "source_pages": [
+        24,
+        26,
+        35
+      ],
+      "quote": "look down at a point on the floor 4-5 feet in front of you",
+      "criterion": "The head should be pitched down (chin toward chest) throughout the rep. The document links an upward gaze to lost hip drive and to an unsafe cervical position.",
+      "assessable": "partial",
+      "measure": "head_pitch_deg",
+      "thresholds": {
+        "min_deg": 10
+      },
+      "threshold_source": "assumption",
+      "threshold_note": "The document requires looking down at a point on the floor 4-5 feet ahead but does not specify a head angle. The 10 degree chin-down threshold is an engineering assumption, not a document requirement.",
+      "feedback_meets": "Head is pitched down {measured} degrees, consistent with the document's chin-down position.",
+      "feedback_fails": "Head is pitched {measured} degrees. The document is explicit that failing to look down kills hip drive, and that an upward gaze puts the cervical spine in an unsafe position under load.",
+      "cannot_assess_reason": "Head landmarks were not available, or the head was outside the frame.",
+      "requires_landmarks": [
+        "head"
+      ],
+      "occlusion_note": "If a required landmark is hidden by a large object in the frame (for example a weight plate), the measurement is a model guess rather than an observation and the rule is reported as cannot assess."
+    },
+    {
+      "id": "STANCE-01",
+      "name": "Stance width — heels about shoulder width",
+      "category": "stance",
+      "source_pages": [
+        13,
+        19,
+        33,
+        35
+      ],
+      "quote": "heels about shoulder width apart",
+      "criterion": "The heels are about shoulder width apart. A stance that is too narrow or too wide prevents proper depth.",
+      "assessable": "no",
+      "measure": null,
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "Left-right foot spacing cannot be determined from a side-view recording. A front or rear view is required.",
+      "feedback_meets": "Stance width cannot be assessed from a side-view recording. The document requires the heels about shoulder width apart.",
+      "feedback_fails": "Stance width cannot be assessed from a side-view recording.",
+      "cannot_assess_reason": "Stance width is not observable in a side view; a front or rear view is required."
+    },
+    {
+      "id": "STANCE-02",
+      "name": "Toe angle — about 30 degrees out",
+      "category": "stance",
+      "source_pages": [
+        13,
+        19,
+        33,
+        35
+      ],
+      "quote": "toes pointed out at about 30 degrees",
+      "criterion": "The toes point outward by about 30 degrees.",
+      "assessable": "no",
+      "measure": null,
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "Toe rotation is only observable from a front or rear view.",
+      "feedback_meets": "Toe angle cannot be assessed from a side-view recording. The document specifies about 30 degrees of toe-out.",
+      "feedback_fails": "Toe angle cannot be assessed from a side-view recording.",
+      "cannot_assess_reason": "Toe angle is not observable in a side view; a front or rear view is required."
+    },
+    {
+      "id": "KNEE-02",
+      "name": "Knees tracking parallel to the feet (no valgus)",
+      "category": "knee",
+      "source_pages": [
+        13,
+        33,
+        35
+      ],
+      "quote": "the knees are shoved out so that the thighs stay parallel to the feet",
+      "criterion": "The thighs should stay parallel to the feet, meaning the knees are shoved out and do not collapse inward.",
+      "assessable": "no",
+      "measure": null,
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "Medial-lateral knee position is not observable in a side view. This is the single most common cause of depth failure according to the document, so it is reported as cannot assess rather than silently passing.",
+      "feedback_meets": "Whether the knees stay parallel to the feet (knees shoved out, no inward collapse) cannot be assessed from a side-view recording.",
+      "feedback_fails": "Whether the knees stay parallel to the feet cannot be assessed from a side-view recording.",
+      "cannot_assess_reason": "Medial-lateral knee position is not observable in a side view; a front or rear view is required."
+    },
+    {
+      "id": "GRIP-01",
+      "name": "Grip width and wrist alignment",
+      "category": "bar_path",
+      "source_pages": [
+        28,
+        29
+      ],
+      "quote": "16-17 inches between the ends of the outside knurl, and 32 inches between the finger marks",
+      "criterion": "The hands sit between the finger marks of the bar (narrower grip), the thumbs wrap on top, and the wrists stay in line with the forearms so the bar's weight sits on the back.",
+      "assessable": "no",
+      "measure": null,
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "Grip width cannot be measured reliably from a side view at typical recording distance.",
+      "feedback_meets": "Grip width and wrist alignment cannot be assessed from a side-view recording.",
+      "feedback_fails": "Grip width and wrist alignment cannot be assessed from a side-view recording.",
+      "cannot_assess_reason": "Grip width and wrist alignment are not reliably observable in a side view."
+    },
+    {
+      "id": "RACK-01",
+      "name": "Rack height at mid-sternum",
+      "category": "setup",
+      "source_pages": [
+        27
+      ],
+      "quote": "Set the rack height so that the bar in the rack is at about the level of your mid-sternum",
+      "criterion": "The rack is set so the bar sits at mid-sternum height, which is below the top of the traps because this is a low-bar position.",
+      "assessable": "no",
+      "measure": null,
+      "thresholds": {},
+      "threshold_source": "document",
+      "threshold_note": "A rack height measurement requires the lifter to be seen unracking in a rack with a known reference; it is not part of the squat itself.",
+      "feedback_meets": "Rack height cannot be assessed from a side-view recording of the squat.",
+      "feedback_fails": "Rack height cannot be assessed from a side-view recording of the squat.",
+      "cannot_assess_reason": "Rack height is a setup measurement, not observable during the squat itself."
+    }
+  ],
+  "document_summary": {
+    "title": "The Squat",
+    "reference_pages": "1-35",
+    "core_claims": [
+      {
+        "ref": 1,
+        "text": "The squat is the only weighted movement that directly trains the posterior chain (hip drive); a low-bar back squat is the way to recruit the most of it."
+      },
+      {
+        "ref": 2,
+        "text": "Depth is judged from two landmarks: the top of the patella (A) and the hip joint at the apex of the crease of the shorts (B). B must drop below parallel with the ground."
+      },
+      {
+        "ref": 8,
+        "text": "The midfoot, halfway between heel and toe, is the balance point; the lifter/barbell system is in balance when the bar is directly over it."
+      },
+      {
+        "ref": 9,
+        "text": "The three diagnostic angles are the back angle (torso vs floor), the hip angle (torso vs femur) and the knee angle (femur vs tibia)."
+      },
+      {
+        "ref": 11,
+        "text": "Good technique is defined as keeping the bar vertically aligned with the balance point; horizontal bar motion is not work against gravity."
+      },
+      {
+        "ref": 13,
+        "text": "The low-bar squat is the preferred form: bar in the lowest secure position just below the scapular spine, heels about shoulder width, toes out about 30 degrees, knees shoved out so the thighs stay parallel to the feet."
+      },
+      {
+        "ref": 16,
+        "text": "Correct squatting is deep, with the hips dropping below the top of the patellas; anything shallower is a partial squat that stresses the knees and quadriceps without the hamstrings, adductors and glutes."
+      },
+      {
+        "ref": 22,
+        "text": "The bottom position: feet flat, femurs parallel to the feet, hips back, knees just a little forward of the toes, back at about 45 degrees so the bar is over the middle of the foot."
+      },
+      {
+        "ref": 23,
+        "text": "Come out of the bottom driving the hips straight up, not forward. Hip extension is the first part of the upward drive."
+      },
+      {
+        "ref": 24,
+        "text": "Look down at a point on the floor 4-5 feet in front of you; an upward gaze kills hip drive and puts the cervical spine in an unsafe position."
+      },
+      {
+        "ref": 29,
+        "text": "Place the bar just under the spine of the scapula; it should feel like a shelf under the traps on top of the posterior deltoids."
+      },
+      {
+        "ref": 33,
+        "text": "The back angle during the drive up is critical; flopping forward lets the bar drop forward of the midfoot. Accept nothing less than full depth."
+      },
+      {
+        "ref": 35,
+        "text": "The eight things lifters get wrong: depth, knee position, stance, eye gaze, back angle, hip drive, bar placement, rack height."
+      }
+    ]
+  }
+}

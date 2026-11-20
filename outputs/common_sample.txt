@@ -1,0 +1,157 @@
+﻿
+  [  5%] opening video
+  [ 60%] detecting repetitions
+  [ 65%] aligning to the floor
+  [ 70%] evaluating against skill
+
+=== REPORT ===
+video      : common_sample.mp4  608x1080 7.867s 30.0fps
+reps       : 2
+skill      : low-bar-squat-standards v2.0.0 (14 rules)
+annotated  : outputs\common_sample_annotated.mp4
+
+--- REP 1  frames 13-108 (bottom @ 61 = 2.033s) ---
+  overall: DOES NOT MEET STANDARD
+  measurements: rep_frames=96, depth_px=43.96, depth_px_raw_hip_joint=21.35, depth_roll_sensitivity_px=24.79, 
+depth_px_range=[19.16, 68.75], depth_uncertainty_px=8.0, torso_length_px=141.32, back_angle_deg=80.69441106807984, 
+back_angle_top_deg=73.08552481076858, hip_angle_deg=69.7054072553352, knee_angle_deg=66.67968386617464, 
+head_pitch_deg=58.74044303890962, bar_drift_samples=96, bar_drift_from_midfoot_px=203.76, bar_drift_range_px=[92.8, 
+315.9], bar_height_vs_shoulder_px=-65.36, knee_forward_of_toe_px=-31.74, hip_behind_ankle_px=86.71, 
+hip_drive_ratio=5.704, camera_roll_deg=-21.8, lifter_faces=left, occlusion={'shoulder': True, 'head': False, 'hip': 
+False, 'knee': False, 'ankle': False, 'bar': False}
+  [        meets standard] DEPTH-01 (p[2, 16, 33, 35]) Full depth ù hip below top of patella
+        Reached full depth: the hip crease apex was 44 px below the top of the patella at the bottom of the rep 
+(reference p2).
+        measured: {'depth_px': 43.96}
+  [         cannot assess] ANGLE-01 (p[9, 22, 33, 35]) Back angle ù torso inclined, not vertical
+        Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked 
+position is a model estimate rather than an observation. Torso landmarks were not available, or the torso was occluded 
+so the shoulder-hip vector could not be measured reliably.
+        ! If a required landmark is hidden by a large object in the frame (for example a weight plate), the 
+measurement is a model guess rather than an observation and the rule is reported as cannot assess.
+  [         cannot assess] ANGLE-02 (p[9, 16]) Hip and knee angles (diagnostic, observation only)
+        Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked 
+position is a model estimate rather than an observation. Landmarks required to form the hip or knee angle were not 
+available.
+        ! If a required landmark is hidden by a large object in the frame (for example a weight plate), the 
+measurement is a model guess rather than an observation and the rule is reported as cannot assess.
+  [does not meet standard] BAR-01 (p[8, 9, 11, 33]) Bar path ù bar stays over the midfoot
+        Bar drifted 204 px horizontally from the midfoot, measured on 96 of 96 frames (the plausible range of that 
+figure is 93 to 316 px, because the bar and the midfoot are far apart vertically). The document states that any 
+horizontal component of bar motion is not work against gravity (reference p11) and that flopping forward lets the bar 
+drop forward of the midfoot (reference p33).
+        measured: {'bar_drift_from_midfoot_px': 203.76, 'bar_drift_samples': 96, 'bar_drift_range_px': [92.8, 315.9]}
+        ! Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; 
+the document states the criterion qualitatively (reference p8, p9, p11, p33).
+  [         cannot assess] BAR-02 (p[13, 29, 30]) Bar placement ù low bar, just below the scapular spine
+        Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked 
+position is a model estimate rather than an observation. The bar could not be located relative to the shoulders in 
+this recording.
+        ! If a required landmark is hidden by a large object in the frame (for example a weight plate), the 
+measurement is a model guess rather than an observation and the rule is reported as cannot assess.
+  [        meets standard] HIP-01 (p[23, 35]) Hip drive ù hips go up, not forward
+        Hips drove up out of the bottom rather than forward, matching the document's 'up, not forward' instruction 
+(reference p23).
+        measured: {'hip_drive_ratio': 5.7}
+  [does not meet standard] KNEE-01 (p[22, 33, 35]) Knee position ù knees just forward of the toes
+        Knees sit 32 px behind the toe line. The document's bottom position has the knees just a little forward of the 
+toes with the hips back (reference p22).
+        measured: {'knee_forward_of_toe_px': -31.74}
+        ! Threshold {'min_px': -10, 'max_px': 120} is an application assumption; the document states the criterion 
+qualitatively (reference p22, p33, p35).
+  [        meets standard] HIP-02 (p[22]) Hips back at the bottom
+        Hips are back over the heels at the bottom, as the document's bottom position describes (reference p22).
+        measured: {'hip_behind_ankle_px': 86.71}
+  [        meets standard] EYE-01 (p[24, 26, 35]) Eye gaze down
+        Head is pitched down 59 degrees, consistent with the document's chin-down position of looking at a point on 
+the floor 4-5 feet in front of you (reference p24).
+        measured: {'head_pitch_deg': 58.74}
+  [         cannot assess] STANCE-01 (p[13, 19, 33, 35]) Stance width ù heels about shoulder width
+        Stance width is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] STANCE-02 (p[13, 19, 33, 35]) Toe angle ù about 30 degrees out
+        Toe angle is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] KNEE-02 (p[13, 33, 35]) Knees tracking parallel to the feet (no valgus)
+        Medial-lateral knee position is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] GRIP-01 (p[28, 29]) Grip width and wrist alignment
+        Grip width and wrist alignment are not reliably observable in a side view.
+        ! Requires a front or rear view.
+  [         cannot assess] RACK-01 (p[27]) Rack height at mid-sternum
+        Rack height is a setup measurement, not observable during the squat itself.
+        ! Requires a front or rear view.
+
+--- REP 2  frames 125-231 (bottom @ 188 = 6.267s) ---
+  overall: DOES NOT MEET STANDARD
+  measurements: rep_frames=107, depth_px=44.32, depth_px_raw_hip_joint=21.16, depth_roll_sensitivity_px=24.08, 
+depth_px_range=[20.24, 68.4], depth_uncertainty_px=8.0, torso_length_px=144.75, back_angle_deg=81.51230640366222, 
+back_angle_top_deg=73.88513386479056, hip_angle_deg=70.30239296883491, knee_angle_deg=68.63734987190395, 
+head_pitch_deg=27.016840081225588, bar_drift_samples=107, bar_drift_from_midfoot_px=206.27, bar_drift_range_px=[96.3, 
+320.2], bar_height_vs_shoulder_px=-59.79, knee_forward_of_toe_px=-36.94, hip_behind_ankle_px=87.46, 
+hip_drive_ratio=5.08, camera_roll_deg=-21.8, lifter_faces=left, occlusion={'shoulder': True, 'head': False, 'hip': 
+False, 'knee': False, 'ankle': False, 'bar': False}
+  [        meets standard] DEPTH-01 (p[2, 16, 33, 35]) Full depth ù hip below top of patella
+        Reached full depth: the hip crease apex was 44 px below the top of the patella at the bottom of the rep 
+(reference p2).
+        measured: {'depth_px': 44.32}
+  [         cannot assess] ANGLE-01 (p[9, 22, 33, 35]) Back angle ù torso inclined, not vertical
+        Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked 
+position is a model estimate rather than an observation. Torso landmarks were not available, or the torso was occluded 
+so the shoulder-hip vector could not be measured reliably.
+        ! If a required landmark is hidden by a large object in the frame (for example a weight plate), the 
+measurement is a model guess rather than an observation and the rule is reported as cannot assess.
+  [         cannot assess] ANGLE-02 (p[9, 16]) Hip and knee angles (diagnostic, observation only)
+        Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked 
+position is a model estimate rather than an observation. Landmarks required to form the hip or knee angle were not 
+available.
+        ! If a required landmark is hidden by a large object in the frame (for example a weight plate), the 
+measurement is a model guess rather than an observation and the rule is reported as cannot assess.
+  [does not meet standard] BAR-01 (p[8, 9, 11, 33]) Bar path ù bar stays over the midfoot
+        Bar drifted 206 px horizontally from the midfoot, measured on 107 of 107 frames (the plausible range of that 
+figure is 96 to 320 px, because the bar and the midfoot are far apart vertically). The document states that any 
+horizontal component of bar motion is not work against gravity (reference p11) and that flopping forward lets the bar 
+drop forward of the midfoot (reference p33).
+        measured: {'bar_drift_from_midfoot_px': 206.27, 'bar_drift_samples': 107, 'bar_drift_range_px': [96.3, 320.2]}
+        ! Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; 
+the document states the criterion qualitatively (reference p8, p9, p11, p33).
+  [         cannot assess] BAR-02 (p[13, 29, 30]) Bar placement ù low bar, just below the scapular spine
+        Cannot assess: the shoulder landmark was hidden behind a large object in the recording, so the tracked 
+position is a model estimate rather than an observation. The bar could not be located relative to the shoulders in 
+this recording.
+        ! If a required landmark is hidden by a large object in the frame (for example a weight plate), the 
+measurement is a model guess rather than an observation and the rule is reported as cannot assess.
+  [        meets standard] HIP-01 (p[23, 35]) Hip drive ù hips go up, not forward
+        Hips drove up out of the bottom rather than forward, matching the document's 'up, not forward' instruction 
+(reference p23).
+        measured: {'hip_drive_ratio': 5.08}
+  [does not meet standard] KNEE-01 (p[22, 33, 35]) Knee position ù knees just forward of the toes
+        Knees sit 37 px behind the toe line. The document's bottom position has the knees just a little forward of the 
+toes with the hips back (reference p22).
+        measured: {'knee_forward_of_toe_px': -36.94}
+        ! Threshold {'min_px': -10, 'max_px': 120} is an application assumption; the document states the criterion 
+qualitatively (reference p22, p33, p35).
+  [        meets standard] HIP-02 (p[22]) Hips back at the bottom
+        Hips are back over the heels at the bottom, as the document's bottom position describes (reference p22).
+        measured: {'hip_behind_ankle_px': 87.46}
+  [        meets standard] EYE-01 (p[24, 26, 35]) Eye gaze down
+        Head is pitched down 27 degrees, consistent with the document's chin-down position of looking at a point on 
+the floor 4-5 feet in front of you (reference p24).
+        measured: {'head_pitch_deg': 27.02}
+  [         cannot assess] STANCE-01 (p[13, 19, 33, 35]) Stance width ù heels about shoulder width
+        Stance width is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] STANCE-02 (p[13, 19, 33, 35]) Toe angle ù about 30 degrees out
+        Toe angle is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] KNEE-02 (p[13, 33, 35]) Knees tracking parallel to the feet (no valgus)
+        Medial-lateral knee position is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] GRIP-01 (p[28, 29]) Grip width and wrist alignment
+        Grip width and wrist alignment are not reliably observable in a side view.
+        ! Requires a front or rear view.
+  [         cannot assess] RACK-01 (p[27]) Rack height at mid-sternum
+        Rack height is a setup measurement, not observable during the squat itself.
+        ! Requires a front or rear view.
+
+

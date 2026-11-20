@@ -1,0 +1,78 @@
+﻿
+  [  5%] opening video
+  [ 60%] detecting repetitions
+  [ 65%] aligning to the floor
+  [ 70%] evaluating against skill
+
+=== REPORT ===
+video      : side_view_clean.mp4  640x480 18.051s 29.97002997002997fps
+reps       : 1
+skill      : low-bar-squat-standards v2.0.0 (14 rules)
+annotated  : outputs\side_view_clean_annotated.mp4
+
+--- REP 1  frames 177-453 (bottom @ 341 = 11.378s) ---
+  overall: DOES NOT MEET STANDARD
+  measurements: rep_frames=277, depth_px=26.16, depth_px_raw_hip_joint=9.75, depth_roll_sensitivity_px=7.96, 
+depth_px_range=[18.21, 34.12], depth_uncertainty_px=8.0, torso_length_px=102.59, back_angle_deg=57.27978047964802, 
+back_angle_top_deg=75.49543809330648, hip_angle_deg=50.464258916678396, knee_angle_deg=63.83946139822087, 
+head_pitch_deg=-6.728512093768728, bar_drift_samples=277, bar_drift_from_midfoot_px=52.86, bar_drift_range_px=[26.7, 
+79.6], bar_height_vs_shoulder_px=12.07, knee_forward_of_toe_px=-6.08, hip_behind_ankle_px=56.8, 
+hip_drive_ratio=11.897, camera_roll_deg=10.3, lifter_faces=right, occlusion={'shoulder': False, 'head': False, 'hip': 
+False, 'knee': False, 'ankle': False, 'bar': False}
+  [        meets standard] DEPTH-01 (p[2, 16, 33, 35]) Full depth ù hip below top of patella
+        Reached full depth: the hip crease apex was 26 px below the top of the patella at the bottom of the rep 
+(reference p2).
+        measured: {'depth_px': 26.16}
+  [        meets standard] ANGLE-01 (p[9, 22, 33, 35]) Back angle ù torso inclined, not vertical
+        Back angle of 57 degrees is consistent with the inclined torso the document describes for the low-bar squat 
+(about 45 degrees, reference p22).
+        measured: {'back_angle_deg': 57.28}
+  [              observed] ANGLE-02 (p[9, 16]) Hip and knee angles (diagnostic, observation only)
+        Hip angle 50 degrees, knee angle 64 degrees at the bottom of the rep.
+        measured: {'hip_angle_deg': 50.46, 'knee_angle_deg': 63.84}
+  [does not meet standard] BAR-01 (p[8, 9, 11, 33]) Bar path ù bar stays over the midfoot
+        Bar drifted 53 px horizontally from the midfoot, measured on 277 of 277 frames (the plausible range of that 
+figure is 27 to 80 px, because the bar and the midfoot are far apart vertically). The document states that any 
+horizontal component of bar motion is not work against gravity (reference p11) and that flopping forward lets the bar 
+drop forward of the midfoot (reference p33).
+        measured: {'bar_drift_from_midfoot_px': 52.86, 'bar_drift_samples': 277, 'bar_drift_range_px': [26.7, 79.6]}
+        ! Threshold {'tolerance_px': 25, 'min_samples': 3, 'min_sample_fraction': 0.2} is an application assumption; 
+the document states the criterion qualitatively (reference p8, p9, p11, p33).
+  [        meets standard] BAR-02 (p[13, 29, 30]) Bar placement ù low bar, just below the scapular spine
+        Bar height is consistent with the low-bar position described in the document. This is an estimate: confirming 
+that the bar sits just under the spine of the scapula requires a rear view (references p29, p30).
+        measured: {'bar_height_vs_shoulder_px': 12.07}
+  [        meets standard] HIP-01 (p[23, 35]) Hip drive ù hips go up, not forward
+        Hips drove up out of the bottom rather than forward, matching the document's 'up, not forward' instruction 
+(reference p23).
+        measured: {'hip_drive_ratio': 11.9}
+  [        meets standard] KNEE-01 (p[22, 33, 35]) Knee position ù knees just forward of the toes
+        Knees sit -6 px forward of the toe line, consistent with the bottom position the document describes (reference 
+p22).
+        measured: {'knee_forward_of_toe_px': -6.08}
+  [        meets standard] HIP-02 (p[22]) Hips back at the bottom
+        Hips are back over the heels at the bottom, as the document's bottom position describes (reference p22).
+        measured: {'hip_behind_ankle_px': 56.8}
+  [does not meet standard] EYE-01 (p[24, 26, 35]) Eye gaze down
+        Head is pitched 7 degrees upward. The document is explicit that failing to look down kills hip drive, and that 
+an upward gaze puts the cervical spine in an unsafe position under load (references p24, p26, p35).
+        measured: {'head_pitch_deg': -6.73}
+        ! Threshold {'min_deg': 10} is an application assumption; the document states the criterion qualitatively 
+(reference p24, p26, p35).
+  [         cannot assess] STANCE-01 (p[13, 19, 33, 35]) Stance width ù heels about shoulder width
+        Stance width is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] STANCE-02 (p[13, 19, 33, 35]) Toe angle ù about 30 degrees out
+        Toe angle is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] KNEE-02 (p[13, 33, 35]) Knees tracking parallel to the feet (no valgus)
+        Medial-lateral knee position is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] GRIP-01 (p[28, 29]) Grip width and wrist alignment
+        Grip width and wrist alignment are not reliably observable in a side view.
+        ! Requires a front or rear view.
+  [         cannot assess] RACK-01 (p[27]) Rack height at mid-sternum
+        Rack height is a setup measurement, not observable during the squat itself.
+        ! Requires a front or rear view.
+
+

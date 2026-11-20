@@ -1,0 +1,274 @@
+﻿
+  [  5%] opening video
+  [ 60%] detecting repetitions
+  [ 65%] aligning to the floor
+  [ 70%] evaluating against skill
+
+=== REPORT ===
+video      : rear_three_quarter.mp4  1920x1080 7.6s 25.0fps
+reps       : 3
+skill      : low-bar-squat-standards v2.0.0 (14 rules)
+annotated  : outputs\rear_three_quarter_annotated.mp4
+
+--- REP 1  frames 0-50 (bottom @ 22 = 0.88s) ---
+  overall: CANNOT ASSESS
+  measurements: rep_frames=51, depth_uncertainty_px=8.0, back_angle_top_deg=89.93043723431576, 
+head_pitch_deg=17.721120388602525, bar_drift_samples=9, bar_drift_from_midfoot_px=118.4, bar_drift_range_px=[118.4, 
+276.9], bar_height_vs_shoulder_px=131.19, camera_roll_deg=-11.75, lifter_faces=left, occlusion={'shoulder': False, 
+'head': False, 'hip': False, 'knee': False, 'ankle': False, 'bar': False}
+  [         cannot assess] DEPTH-01 (p[2, 16, 33, 35]) Full depth ù hip below top of patella
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] ANGLE-01 (p[9, 22, 33, 35]) Back angle ù torso inclined, not vertical
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] ANGLE-02 (p[9, 16]) Hip and knee angles (diagnostic, observation only)
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] BAR-01 (p[8, 9, 11, 33]) Bar path ù bar stays over the midfoot
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] BAR-02 (p[13, 29, 30]) Bar placement ù low bar, just below the scapular spine
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] HIP-01 (p[23, 35]) Hip drive ù hips go up, not forward
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] KNEE-01 (p[22, 33, 35]) Knee position ù knees just forward of the toes
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] HIP-02 (p[22]) Hips back at the bottom
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] EYE-01 (p[24, 26, 35]) Eye gaze down
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] STANCE-01 (p[13, 19, 33, 35]) Stance width ù heels about shoulder width
+        Stance width is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] STANCE-02 (p[13, 19, 33, 35]) Toe angle ù about 30 degrees out
+        Toe angle is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] KNEE-02 (p[13, 33, 35]) Knees tracking parallel to the feet (no valgus)
+        Medial-lateral knee position is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] GRIP-01 (p[28, 29]) Grip width and wrist alignment
+        Grip width and wrist alignment are not reliably observable in a side view.
+        ! Requires a front or rear view.
+  [         cannot assess] RACK-01 (p[27]) Rack height at mid-sternum
+        Rack height is a setup measurement, not observable during the squat itself.
+        ! Requires a front or rear view.
+
+--- REP 2  frames 50-110 (bottom @ 88 = 3.52s) ---
+  overall: CANNOT ASSESS
+  measurements: rep_frames=61, depth_px=188.34, depth_px_raw_hip_joint=127.8, depth_roll_sensitivity_px=50.94, 
+depth_px_range=[137.4, 239.28], depth_uncertainty_px=18.92, torso_length_px=378.34, back_angle_deg=71.25851033467683, 
+back_angle_top_deg=86.38210687712147, hip_angle_deg=29.462377793754396, knee_angle_deg=125.11624696826573, 
+head_pitch_deg=10.93902633044894, bar_drift_samples=22, bar_drift_from_midfoot_px=149.01, bar_drift_range_px=[149.0, 
+300.8], bar_height_vs_shoulder_px=210.2, knee_forward_of_toe_px=-122.02, hip_behind_ankle_px=200.92, 
+hip_drive_ratio=9.019, camera_roll_deg=-11.75, lifter_faces=left, occlusion={'shoulder': False, 'head': False, 'hip': 
+False, 'knee': False, 'ankle': False, 'bar': False}
+  [         cannot assess] DEPTH-01 (p[2, 16, 33, 35]) Full depth ù hip below top of patella
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] ANGLE-01 (p[9, 22, 33, 35]) Back angle ù torso inclined, not vertical
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] ANGLE-02 (p[9, 16]) Hip and knee angles (diagnostic, observation only)
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] BAR-01 (p[8, 9, 11, 33]) Bar path ù bar stays over the midfoot
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] BAR-02 (p[13, 29, 30]) Bar placement ù low bar, just below the scapular spine
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] HIP-01 (p[23, 35]) Hip drive ù hips go up, not forward
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] KNEE-01 (p[22, 33, 35]) Knee position ù knees just forward of the toes
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] HIP-02 (p[22]) Hips back at the bottom
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] EYE-01 (p[24, 26, 35]) Eye gaze down
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] STANCE-01 (p[13, 19, 33, 35]) Stance width ù heels about shoulder width
+        Stance width is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] STANCE-02 (p[13, 19, 33, 35]) Toe angle ù about 30 degrees out
+        Toe angle is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] KNEE-02 (p[13, 33, 35]) Knees tracking parallel to the feet (no valgus)
+        Medial-lateral knee position is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] GRIP-01 (p[28, 29]) Grip width and wrist alignment
+        Grip width and wrist alignment are not reliably observable in a side view.
+        ! Requires a front or rear view.
+  [         cannot assess] RACK-01 (p[27]) Rack height at mid-sternum
+        Rack height is a setup measurement, not observable during the squat itself.
+        ! Requires a front or rear view.
+
+--- REP 3  frames 136-178 (bottom @ 154 = 6.16s) ---
+  overall: CANNOT ASSESS
+  measurements: rep_frames=43, depth_px=190.82, depth_px_raw_hip_joint=131.91, depth_roll_sensitivity_px=77.21, 
+depth_px_range=[113.61, 268.03], depth_uncertainty_px=18.41, torso_length_px=368.21, back_angle_deg=70.87107134045186, 
+back_angle_top_deg=89.52505572788037, hip_angle_deg=39.538447569819844, knee_angle_deg=32.759581377280874, 
+head_pitch_deg=20.25061459344012, bar_drift_samples=31, bar_drift_from_midfoot_px=144.34, bar_drift_range_px=[144.3, 
+389.4], bar_height_vs_shoulder_px=231.72, knee_forward_of_toe_px=70.11, hip_behind_ankle_px=102.97, 
+hip_drive_ratio=4.683, camera_roll_deg=-11.75, lifter_faces=left, occlusion={'shoulder': False, 'head': False, 'hip': 
+False, 'knee': False, 'ankle': False, 'bar': False}
+  [         cannot assess] DEPTH-01 (p[2, 16, 33, 35]) Full depth ù hip below top of patella
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] ANGLE-01 (p[9, 22, 33, 35]) Back angle ù torso inclined, not vertical
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] ANGLE-02 (p[9, 16]) Hip and knee angles (diagnostic, observation only)
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] BAR-01 (p[8, 9, 11, 33]) Bar path ù bar stays over the midfoot
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] BAR-02 (p[13, 29, 30]) Bar placement ù low bar, just below the scapular spine
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] HIP-01 (p[23, 35]) Hip drive ù hips go up, not forward
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] KNEE-01 (p[22, 33, 35]) Knee position ù knees just forward of the toes
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] HIP-02 (p[22]) Hips back at the bottom
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] EYE-01 (p[24, 26, 35]) Eye gaze down
+        Cannot assess: this recording does not appear to be a side view (the left and right shoulders are separated by 
+0.35 of the torso length in the image). The document's criteria are defined in the sagittal plane, so they cannot be 
+evaluated from this angle.
+        ! This recording does not appear to be a side view. The document's criteria are defined in the sagittal plane, 
+so the depth, torso-angle, knee-position and bar-path criteria cannot be evaluated from this angle. Stance width, toe 
+angle and knee tracking can be, but are reported as cannot assess throughout.
+  [         cannot assess] STANCE-01 (p[13, 19, 33, 35]) Stance width ù heels about shoulder width
+        Stance width is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] STANCE-02 (p[13, 19, 33, 35]) Toe angle ù about 30 degrees out
+        Toe angle is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] KNEE-02 (p[13, 33, 35]) Knees tracking parallel to the feet (no valgus)
+        Medial-lateral knee position is not observable in a side view; a front or rear view is required.
+        ! Requires a front or rear view.
+  [         cannot assess] GRIP-01 (p[28, 29]) Grip width and wrist alignment
+        Grip width and wrist alignment are not reliably observable in a side view.
+        ! Requires a front or rear view.
+  [         cannot assess] RACK-01 (p[27]) Rack height at mid-sternum
+        Rack height is a setup measurement, not observable during the squat itself.
+        ! Requires a front or rear view.
+
+
